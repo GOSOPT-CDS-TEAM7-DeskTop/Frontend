@@ -21,11 +21,11 @@ const fonts = {
     font-style: normal;
   `,
   pinterest_header2: css`
-  font-family: Roboto;
-  font-size: 1.7rem;
-  font-weight: 500;
-  font-style: normal;
-`,
+    font-family: Roboto;
+    font-size: 1.7rem;
+    font-weight: 500;
+    font-style: normal;
+  `,
 };
 
 const theme: DefaultTheme = {
