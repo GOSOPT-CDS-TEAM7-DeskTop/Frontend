@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
 
 const Router = () => {
   return (
@@ -6,12 +7,14 @@ const Router = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/home" element={<Home />} />
-          <Route path="/pin/:pinId" element={<PinDetail />} />
-          <Route path="/mypage/:userId" element={<Mypage />} />
-          <Route path="/pinupload" element={<Upload />} />
-          <Route path="*" element={<ErrorPage />} />
+          {/* <Route path="/pin/:pinId" element={<PinDetail />} /> 보미 파이팅!*/}
+          {/* <Route path="/mypage/:userId" element={<Mypage />} /> 예현 파이팅!*/}
+          {/* <Route path="/pinupload" element={<Upload />} /> 재욱 파이팅!*/}
+          {/* <Route path="*" element={<ErrorPage />} /> 찬우 파이팅!*/}
         </Routes>
       </BrowserRouter>
     </>
   );
 };
+
+export default Router;
