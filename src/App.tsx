@@ -15,11 +15,7 @@ function App() {
 
 export default App;
 
-interface IProps {
-  theme: DefaultTheme;
-}
-
-const PinterestTitleWrapper = styled.h1<IProps>`
+const PinterestTitleWrapper = styled.h1`
   color: ${({ theme }) => theme.colors.pinterest_red};
   ${({ theme }) => theme.fonts.pinterest_title};
 `;
