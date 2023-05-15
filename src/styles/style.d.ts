@@ -1,7 +1,7 @@
 import "styled-components";
 
 declare module "styled-components" {
-  export interface DefaultTheme {
+  export interface IDefaultTheme {
     colors: {
       pinterest_black: string;
       pinterest_red: string;
