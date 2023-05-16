@@ -1,11 +1,11 @@
 import { styled } from "styled-components";
-import pinterestLogo from "../../assets/images/pinterestLogo.png";
-import BtnDropDown from "../../assets/images/btn_down.png";
-import readingGlasses from "../../assets/images/readingGlasses.png";
-import btnAlarm from "../../assets/images/btn_alarm.png";
-import btnMessage from "../../assets/images/btn_message.png";
-import btnProfile from "../../assets/images/btn_profile.png";
-import btnArrowDown from "../../assets/images/btn_arrow_down.png";
+import pinterestLogo from "../../assets/images/btn_home.png";
+import BtnDropDown from "../../assets/icon/btn_down.png";
+import readingGlasses from "../../assets/icon/readingGlasses.png";
+import btnAlarm from "../../assets/icon/btn_alarm.png";
+import btnMessage from "../../assets/icon/btn_message.png";
+import btnProfile from "../../assets/icon/btn_profile.png";
+import btnArrowDown from "../../assets/icon/btn_arrow_down.png";
 
 function HeaderBar() {
   return (
