@@ -89,7 +89,7 @@ const SearchSection = styled.section`
   input {
     width: 100%;
     height: 100%;
-    padding: 1.4rem 4.2rem;
+    padding: 1.4rem 8.2rem 1.4rem 4.2rem;
     margin: 0 4rem 0 2.7rem;
 
     border: none;
@@ -107,6 +107,19 @@ const SearchSection = styled.section`
 
     width: 1.685rem;
     height: 1.691rem;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 12.2rem;
+
+    width: 0.2rem;
+    height: 3.2rem;
+
+    background-color: #d8d8d8;
   }
 `;
 
