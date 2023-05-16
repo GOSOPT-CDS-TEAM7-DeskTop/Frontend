@@ -12,14 +12,14 @@ function HeaderBar() {
     <>
       <HeaderBarWrapper>
         <NavSection>
-          <img src={pinterestLogo} alt="pinterestLogo"></img>
+          <img src={pinterestLogo} alt="pinterestLogo" />
           <button>
             만들기
-            <img src={BtnDropDown} alt="dropDownBtn"></img>
+            <img src={BtnDropDown} alt="dropDownBtn" />
           </button>
         </NavSection>
         <SearchSection>
-          <input placeholder="핀 검색"></input>
+          <input placeholder="핀 검색" />
           <img src={readingGlasses} alt="readingGlasses" />
         </SearchSection>
         <ManageSection>
