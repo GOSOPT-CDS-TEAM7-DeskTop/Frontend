@@ -2,6 +2,11 @@ import { styled } from "styled-components";
 import pinterestLogo from "../assets/images/pinterestLogo.png";
 import dropDownBtn from "../assets/images/btn_down.png";
 import readingGlasses from "../assets/images/readingGlasses.png";
+import btnAlarm from "../assets/images/btn_alarm.png";
+import btnMessage from "../assets/images/btn_message.png";
+import btnProfile from "../assets/images/btn_profile.png";
+import btnArrowDown from "../assets/images/btn_arrow_down.png";
+
 function Home() {
   return (
     <>
@@ -17,9 +22,14 @@ function Home() {
           <input placeholder="핀 검색"></input>
           <img src={readingGlasses} alt="readingGlasses" />
         </SearchSection>
-        {/* <ManageSection>
-
-        </ManageSection> */}
+        <ManageSection>
+          <img src={btnAlarm} alt="readingGlasses" />
+          <img src={btnMessage} alt="btnMessage" />
+          <ProfileImg>
+            <img src={btnProfile} />
+          </ProfileImg>
+          <img src={btnArrowDown} alt="btnArrowDown" />
+        </ManageSection>
       </HeaderBarWrapper>
     </>
   );
@@ -33,14 +43,13 @@ const HeaderBarWrapper = styled.header`
 
   height: 5rem;
   margin: 2.1rem 4.9rem 0 4.8rem;
-
-  border: 2px solid black;
 `;
 
 const NavSection = styled.nav`
   display: flex;
   flex-direction: row;
-  border: 2px solid salmon;
+
+  width: 8%;
 
   img {
     margin: 1rem 2.6rem 0.8rem 0;
@@ -75,9 +84,7 @@ const SearchSection = styled.section`
   align-items: center;
   position: relative;
 
-  width: 70%;
-
-  border: 2px solid pink;
+  width: 82%;
 
   input {
     width: 100%;
@@ -100,5 +107,33 @@ const SearchSection = styled.section`
 
     width: 1.685rem;
     height: 1.691rem;
+  }
+`;
+
+const ManageSection = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  width: 10%;
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 5.2rem;
+    height: 5.2rem;
+  }
+`;
+
+const ProfileImg = styled.div`
+  img {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+
+    /** 프로필이미지 데이터 연결과정에서 삭제할 border */
+    border: blue solid 1px;
   }
 `;
