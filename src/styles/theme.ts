@@ -29,7 +29,7 @@ const fonts = {
   `,
    pinterest_header3: css`
    font-family: Roboto;
-   font-size: 1.2rem;
+   font-size: 1.5rem;
    font-weight: 500;
    font-style: normal;
  `,
