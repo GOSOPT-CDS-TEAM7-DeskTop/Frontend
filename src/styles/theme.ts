@@ -27,6 +27,12 @@ const fonts = {
     font-weight: 500;
     font-style: normal;
   `,
+   pinterest_header3: css`
+   font-family: Roboto;
+   font-size: 1.2rem;
+   font-weight: 500;
+   font-style: normal;
+ `,
   pinterest_header4: css`
   font-family: Roboto;
   font-size: 1.2rem;
