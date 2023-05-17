@@ -13,7 +13,7 @@ function HeaderBar() {
       <HeaderBarWrapper>
         <NavSection>
           <img src={pinterestLogo} alt="pinterestLogo" />
-          <button>
+          <button type="button">
             만들기
             <img src={BtnDropDown} alt="dropDownBtn" />
           </button>
@@ -26,7 +26,7 @@ function HeaderBar() {
           <img src={btnAlarm} alt="readingGlasses" />
           <img src={btnMessage} alt="btnMessage" />
           <ProfileImg>
-            <img src={btnProfile} />
+            <img src={btnProfile} alt="btnProfile" />
           </ProfileImg>
           <img src={btnArrowDown} alt="btnArrowDown" />
         </ManageSection>
@@ -64,7 +64,6 @@ const NavSection = styled.nav`
     gap: 0.7rem;
     padding: 0;
 
-    border: none;
     background-color: transparent;
     color: ${({ theme }) => theme.colors.pinterest_black};
     ${({ theme }) => theme.fonts.pinterest_header1};
