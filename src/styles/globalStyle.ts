@@ -140,7 +140,7 @@ export const GlobalStyle = createGlobalStyle`
 
 @font-face {
   font-family: 'Roboto';
-  src: url('Roboto-Regular.ttf') format('truetype');
+  src:url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fABc4EsA.woff2) format('woff2');
   font-weight: normal;
   font-style: normal;
 }
