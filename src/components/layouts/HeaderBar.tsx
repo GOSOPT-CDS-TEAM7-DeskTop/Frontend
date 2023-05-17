@@ -19,7 +19,7 @@ function HeaderBar() {
           </button>
         </NavSection>
         <SearchSection>
-          <input placeholder="핀 검색" />
+          <input type="text" placeholder="핀 검색" />
           <img src={readingGlasses} alt="readingGlasses" />
         </SearchSection>
         <ManageSection>
