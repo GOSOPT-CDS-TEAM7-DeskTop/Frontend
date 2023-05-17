@@ -3,15 +3,16 @@ import { styled } from "styled-components";
 function Home() {
   return (
     <>
-      <PinterestTitleWrapper>PinterestTitleHeader</PinterestTitleWrapper>
-      Home
+      <HeaderWrapper>PinterestTitleHeader</HeaderWrapper>
+    
     </>
   );
 }
 
 export default Home;
 
-const PinterestTitleWrapper = styled.h1`
-  color: ${({ theme }) => theme.colors.pinterest_red};
-  ${({ theme }) => theme.fonts.pinterest_title};
+/** 차후 대체할 Header */
+const HeaderWrapper = styled.h1`
+  height: 5rem;
+  border: 1px solid black;
 `;
