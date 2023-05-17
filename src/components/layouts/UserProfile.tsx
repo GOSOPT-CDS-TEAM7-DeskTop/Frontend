@@ -7,6 +7,8 @@ function UserProfile() {
       <Img src="../../src/assets/images/userImage.svg" alt="userImage" />
       <UserName>라망</UserName>
       <UserId>@ca090434</UserId>
+      <FollowNum>팔로잉 0명</FollowNum>
+
       </UserProfileWrapper>
     </>
   );
@@ -32,14 +34,21 @@ const Img = styled.img`
     border-radius: 55%;
     `;
 
-const UserName = styled.h2`
+const UserName = styled.h1`
     ${({ theme }) => theme.fonts.pinterest_title};
     color: ${({ theme }) => theme.colors.pinterest_black};
     margin-top: 1rem;
-    margin-bottom: 0.9rem;
+    margin-bottom: 1.2rem;
     `;
 
-const UserId = styled.h3`
+const UserId = styled.h4`
     ${({ theme }) => theme.fonts.pinterest_header4};
     color: ${({ theme }) => theme.colors.pinterest_deepgray};
+    margin-bottom: 0.8rem;
     `;
+
+const FollowNum = styled.h3`
+    ${({ theme }) => theme.fonts.pinterest_header3};
+    color: ${({ theme }) => theme.colors.pinterest_black};
+    `;
+
