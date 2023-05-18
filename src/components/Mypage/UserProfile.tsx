@@ -81,6 +81,6 @@ const ShareButton = styled.button`
   color: ${({ theme }) => theme.colors.pinterest_black};
   background-color: ${({ theme }) => theme.colors.pinterest_gray};
 
-  ${({ theme }) => theme.fonts.pinterest_header2};
+  ${({ theme }) => theme.fonts.pinterest_header3};
   font-weight: 700;
 `;
