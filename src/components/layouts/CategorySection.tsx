@@ -123,7 +123,8 @@ const FilterSection = styled.span`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 2.4rem;
+
+  margin: 0 11rem 2.4rem 11rem;
 
   img {
     width: 2.4rem;
