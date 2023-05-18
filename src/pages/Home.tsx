@@ -4,7 +4,7 @@ function Home() {
   return (
     <>
       <PinterestTitleWrapper>PinterestTitleHeader</PinterestTitleWrapper>
-      Home
+
     </>
   );
 }

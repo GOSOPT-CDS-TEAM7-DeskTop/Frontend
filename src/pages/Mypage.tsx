@@ -4,9 +4,10 @@ import UserProfile from "../components/layouts/UserProfile";
 function Mypage() {
   return (
     <>
-        <PinterestTitleWrapper>PinterestTitleHeader</PinterestTitleWrapper>
-        <UserProfile/>
-    </>
+        <PinterestTitleWrapper></PinterestTitleWrapper>
+        <UserProfile/> 
+
+     </>
 
     );
 }
@@ -14,6 +15,9 @@ function Mypage() {
 export default Mypage;
 
 const PinterestTitleWrapper = styled.h1`
+  margin-bottom: 7.4rem;
+  
   color: ${({ theme }) => theme.colors.pinterest_red};
   ${({ theme }) => theme.fonts.pinterest_title};
 `;
+
