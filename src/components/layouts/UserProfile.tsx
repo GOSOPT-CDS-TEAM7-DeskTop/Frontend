@@ -4,7 +4,9 @@ function UserProfile() {
   return (
     <>
       <UserProfileWrapper>
-        <Img src="../../src/assets/images/userImage.svg" alt="userImage" />
+        <UserImageSection>
+          <img src="../../src/assets/images/userImage.svg" alt="userImage" />
+        </UserImageSection>
         <UserName>라망</UserName>
         <UserId>@ca090434</UserId>
         <FollowNum>팔로잉 0명</FollowNum>
@@ -30,7 +32,7 @@ const UserProfileWrapper = styled.section`
   margin: 2.4rem;
 `;
 
-const Img = styled.img`
+const UserImageSection = styled.div`
   width: 11rem;
   height: 11rem;
 
