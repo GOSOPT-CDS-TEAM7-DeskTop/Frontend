@@ -5,6 +5,7 @@ const colors = {
   pinterest_red: "#E60022",
   pinterest_gray: "#EFEFEF",
   pinterest_lightgray: "#EDEDED",
+  pinterest_white: "#ffffff",
 };
 
 const fonts = {

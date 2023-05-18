@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import React, { useContext } from "react";
+import styled, { ThemeContext } from "styled-components";
 
 type SaveBtnProps = {
   setIsSaveBtnClicked: Function;
@@ -7,17 +8,21 @@ type SaveBtnProps = {
 
 function SaveBtn(props: SaveBtnProps) {
   const { isSaveBtnClicked, setIsSaveBtnClicked } = props;
+  const themeContext = useContext(ThemeContext);
+
   const toggleSaveBtn = () => {
     setIsSaveBtnClicked((isSaveBtnClicked: any) => !isSaveBtnClicked);
   };
   return (
     <>
       {isSaveBtnClicked ? (
-        <SaveBtnWrapper onClick={toggleSaveBtn} savedBtn>
+        <SaveBtnWrapper onClick={toggleSaveBtn} backgroundColor={themeContext["colors"]["pinterest_black"]}>
           저장됨
         </SaveBtnWrapper>
       ) : (
-        <SaveBtnWrapper onClick={toggleSaveBtn}>저장</SaveBtnWrapper>
+        <SaveBtnWrapper onClick={toggleSaveBtn} backgroundColor={themeContext["colors"]["pinterest_red"]}>
+          저장
+        </SaveBtnWrapper>
       )}
     </>
   );
@@ -34,8 +39,8 @@ const SaveBtnWrapper = styled.button`
 
   border-radius: 5rem;
   border: 0;
-  background-color: ${(props) => (props.savedBtn ? "#000000" : "#E60022")};
-  color: #ffffff;
+  color: ${({ theme }) => theme.colors.pinterest_white};
+  background-color: ${(props) => props.backgroundColor};
 
   font-family: "Roboto";
   font-style: normal;

@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import React, { useContext } from "react";
+import styled, { ThemeContext } from "styled-components";
 
 type FollowBtnProps = {
   setIsFollowBtnClicked: Function;
@@ -7,18 +8,29 @@ type FollowBtnProps = {
 
 function FollowBtn(props: FollowBtnProps) {
   const { isFollowBtnClicked, setIsFollowBtnClicked } = props;
+  const themeContext = useContext(ThemeContext);
+
   const toggleFollowBtn = () => {
     setIsFollowBtnClicked((isFollowBtnClicked: any) => !isFollowBtnClicked);
   };
+
   return (
     <>
       <>
         {isFollowBtnClicked ? (
-          <FollowBtnWrapper onClick={toggleFollowBtn} followedBtn>
+          <FollowBtnWrapper
+            onClick={toggleFollowBtn}
+            color={themeContext["colors"]["pinterest_black"]}
+            backgroundColor={themeContext["colors"]["pinterest_lightgray"]}>
             팔로우
           </FollowBtnWrapper>
         ) : (
-          <FollowBtnWrapper onClick={toggleFollowBtn}>팔로잉</FollowBtnWrapper>
+          <FollowBtnWrapper
+            onClick={toggleFollowBtn}
+            color={themeContext["colors"]["pinterest_white"]}
+            backgroundColor={themeContext["colors"]["pinterest_black"]}>
+            팔로잉
+          </FollowBtnWrapper>
         )}
       </>
     </>
@@ -36,8 +48,8 @@ const FollowBtnWrapper = styled.button`
 
   border-radius: 5rem;
   border: 0;
-  background-color: ${(props) => (props.followedBtn ? "#EDEDED" : "#000000")};
-  color: ${(props) => (props.followedBtn ? "#000000" : "#FFFFFF")};
+  color: ${(props) => props.color};
+  background-color: ${(props) => props.backgroundColor};
 
   font-family: "Roboto";
   font-style: normal;
