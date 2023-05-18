@@ -93,31 +93,35 @@ const CategorySectionWrapper = styled.section`
 
 const CreatedStoredWrapper = styled.div`
   display: flex;
-  width: 100%;
-  height: 2.6rem;
-
   flex-direction: row;
   justify-content: center;
   align-items: center;
 
+  width: 100%;
+  height: 2.6rem;
+
   gap: 3rem;
+
   margin-bottom: 2.2rem;
 `;
 
 const Created = styled.div`
   height: 2.6rem;
+
   color: ${({ theme }) => theme.colors.pinterest_black};
   ${({ theme }) => theme.fonts.pinterest_header2};
 `;
 
 const Stored = styled.div`
   height: 2.6rem;
-  color: ${({ theme }) => theme.colors.pinterest_black};
-  ${({ theme }) => theme.fonts.pinterest_header2};
+
   border-bottom: 0.3rem;
   border-bottom-style: solid;
   border-color: ${({ theme }) => theme.colors.pinterest_black};
   padding-bottom: 0.8rem;
+
+  color: ${({ theme }) => theme.colors.pinterest_black};
+  ${({ theme }) => theme.fonts.pinterest_header2};
 `;
 
 const FilterSection = styled.span`
@@ -167,8 +171,8 @@ const CardContainer = styled.div`
 `;
 
 const CardInfo = styled.span`
-  position: absolute;
   display: flex;
+  position: absolute;
 
   top: 80.71%;
   left: 6.6%;
@@ -182,6 +186,6 @@ const CardInfo = styled.span`
 const Line = styled.div`
   width: 100%;
   height: 0.1rem;
-  
+
   background-color: #cdcdcd;
 `;
