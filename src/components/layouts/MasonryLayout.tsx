@@ -5,9 +5,9 @@ import IMAGE from "../../assets/images/images";
 function MasonryLayout() {
   const childElements = IMAGE.map((element) => {
     return (
-      <div>
-        <img src={element} />
-      </div>
+      <article>
+        <img src={element} alt={element} />
+      </article>
     );
   });
 
@@ -23,9 +23,9 @@ function MasonryLayout() {
 export default MasonryLayout;
 
 const StyledMasonryInfiniteGrid = styled(MasonryInfiniteGrid)`
-  div {
+  article {
     img {
-      width: 16rem;
+      width: 21rem;
       border-radius: 1.2rem;
     }
   }
