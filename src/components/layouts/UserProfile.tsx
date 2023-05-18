@@ -8,10 +8,10 @@ function UserProfile() {
         <UserName>라망</UserName>
         <UserId>@ca090434</UserId>
         <FollowNum>팔로잉 0명</FollowNum>
-        <ButtonWrapper>
+        <ButtonSection>
           <ShareButton>공유</ShareButton>
           <ShareButton>프로필 수정</ShareButton>
-        </ButtonWrapper>
+        </ButtonSection>
       </UserProfileWrapper>
     </>
   );
@@ -61,7 +61,7 @@ const FollowNum = styled.h3`
   font-weight: 600;
 `;
 
-const ButtonWrapper = styled.div`
+const ButtonSection = styled.div`
   display: flex;
   gap: 0.7rem;
 `;
