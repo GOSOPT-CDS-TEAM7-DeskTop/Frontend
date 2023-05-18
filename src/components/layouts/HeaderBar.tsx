@@ -41,18 +41,24 @@ const HeaderBarWrapper = styled.header`
   display: flex;
   flex-direction: row;
 
+  width: 180rem;
   height: 5rem;
-  margin: 2.1rem 4.9rem 0 4.8rem;
+  margin: 2.1rem auto;
+  margin-bottom: 0;
 `;
 
 const NavSection = styled.nav`
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: row;
 
-  width: 8%;
+  width: 14.8rem;
 
   img {
-    margin: 1rem 2.6rem 0.8rem 0;
+    width: 3.2rem;
+    height: 3.2rem;
+    margin-right: 0.4rem;
   }
 
   button {
@@ -60,9 +66,12 @@ const NavSection = styled.nav`
     justify-content: center;
     align-items: center;
     flex-direction: row;
-
     gap: 0.7rem;
+
+    width: 10rem;
+    height: 4rem;
     padding: 0;
+    margin-right: 0.8rem;
 
     background-color: transparent;
     color: ${({ theme }) => theme.colors.pinterest_black};
@@ -71,8 +80,7 @@ const NavSection = styled.nav`
 
     img {
       width: 1rem;
-      height: 0.5rem;
-      margin: 0;
+      height: 0.4rem;
     }
   }
 `;
@@ -83,13 +91,12 @@ const SearchSection = styled.section`
   align-items: center;
   position: relative;
 
-  width: 82%;
+  margin-right: 3.6rem;
 
   input {
-    width: 100%;
+    width: 146rem;
     height: 100%;
     padding: 1.4rem 8.2rem 1.4rem 4.2rem;
-    margin: 0 4rem 0 2.7rem;
 
     border: none;
     border-radius: 2.2rem;
@@ -102,7 +109,7 @@ const SearchSection = styled.section`
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 4.427rem;
+    left: 1.4rem;
 
     width: 1.685rem;
     height: 1.691rem;
@@ -124,10 +131,10 @@ const SearchSection = styled.section`
 
 const ManageSection = styled.div`
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  gap: 1.5rem;
 
-  width: 10%;
+  width: 16rem;
 
   div {
     display: flex;
@@ -141,11 +148,8 @@ const ManageSection = styled.div`
 
 const ProfileImg = styled.div`
   img {
-    width: 3.2rem;
-    height: 3.2rem;
+    width: 2.4rem;
+    height: 2.4rem;
     border-radius: 50%;
-
-    /** 프로필이미지 데이터 연결과정에서 삭제할 border */
-    border: blue solid 1px;
   }
 `;
