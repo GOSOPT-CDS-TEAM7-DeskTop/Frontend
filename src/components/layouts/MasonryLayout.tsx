@@ -7,7 +7,7 @@ function MasonryLayout() {
   const childElements = IMAGE.map((element) => {
     return (
       <article>
-        <img src={element} alt={element} />
+        <img key={element} src={element} alt={element} />
       </article>
     );
   });
@@ -26,7 +26,7 @@ export default MasonryLayout;
 const StyledMasonryInfiniteGrid = styled(MasonryInfiniteGrid)`
   article {
     img {
-      width: 21rem;
+      width: 23rem;
       border-radius: 1.2rem;
     }
     &:hover {

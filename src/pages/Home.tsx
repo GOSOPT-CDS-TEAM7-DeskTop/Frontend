@@ -16,6 +16,7 @@ function Home() {
 export default Home;
 
 const MansoryWrapper = styled.section`
-  width: 100%;
-  padding: 0.8rem 8.6rem 0 8.6rem;
+  width: 175rem;
+  padding-top: 0.8rem;
+  margin: 0 auto;
 `;
