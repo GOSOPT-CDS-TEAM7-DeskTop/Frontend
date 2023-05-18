@@ -1,11 +1,11 @@
 import { styled } from "styled-components";
-import pinterestLogo from "../../assets/images/btn_home.png";
-import BtnDropDown from "../../assets/icon/btn_down.png";
-import readingGlasses from "../../assets/icon/readingGlasses.png";
-import btnAlarm from "../../assets/icon/btn_alarm.png";
-import btnMessage from "../../assets/icon/btn_message.png";
-import btnProfile from "../../assets/icon/btn_profile.png";
-import btnArrowDown from "../../assets/icon/btn_arrow_down.png";
+import pinterestLogo from "../../assets/images/btn_home.svg";
+import BtnDropDown from "../../assets/icon/btn_down.svg";
+import readingGlasses from "../../assets/icon/readingGlasses.svg";
+import iconAlarm from "../../assets/icon/icon_alarm.svg";
+import iconMessage from "../../assets/icon/icon _message.svg";
+import userProfile from "../../assets/icon/user_Profile.svg";
+import btnArrowDown from "../../assets/icon/btn_arrow_down.svg";
 
 function HeaderBar() {
   return (
@@ -23,10 +23,10 @@ function HeaderBar() {
           <img src={readingGlasses} alt="readingGlasses" />
         </SearchSection>
         <ManageSection>
-          <img src={btnAlarm} alt="readingGlasses" />
-          <img src={btnMessage} alt="btnMessage" />
+          <img src={iconAlarm} alt="iconAlarm" />
+          <img src={iconMessage} alt="btnMessage" />
           <ProfileImg>
-            <img src={btnProfile} alt="btnProfile" />
+            <img src={userProfile} alt="btnProfile" />
           </ProfileImg>
           <img src={btnArrowDown} alt="btnArrowDown" />
         </ManageSection>
