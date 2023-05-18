@@ -14,4 +14,13 @@ function ArticleBrick({ imgSrc }: IImgSrc) {
 
 export default ArticleBrick;
 
-const ArticleBrickWrapper = styled.article``;
+const ArticleBrickWrapper = styled.article`
+  img {
+    width: 23rem;
+    border-radius: 1.2rem;
+  }
+  &:hover {
+    filter: brightness(0.6);
+    cursor: pointer;
+  }
+`;
