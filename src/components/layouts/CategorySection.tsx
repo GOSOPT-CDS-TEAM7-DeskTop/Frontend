@@ -77,6 +77,7 @@ const CategorySection = () => {
           </CardInfo>
         </CardContainer>
       </CardSection>
+      <Line />
     </CategorySectionWrapper>
   );
 };
@@ -137,9 +138,7 @@ const CardSection = styled.section`
   flex-direction: row;
   justify-content: center;
 
-
   gap: 1.6rem;
-
 
   img {
     width: 21.2rem;
@@ -154,6 +153,8 @@ const CardContainer = styled.div`
 
   width: 21.2rem;
   height: 14rem;
+
+  margin-bottom: 4.5rem;
 
   h2 {
     position: absolute;
@@ -176,4 +177,11 @@ const CardInfo = styled.span`
 
   color: ${({ theme }) => theme.colors.pinterest_white};
   ${({ theme }) => theme.fonts.pinterest_header4};
+`;
+
+const Line = styled.div`
+  width: 100%;
+  height: 0.1rem;
+  
+  background-color: #cdcdcd;
 `;
