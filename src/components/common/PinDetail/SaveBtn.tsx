@@ -39,9 +39,8 @@ const SaveBtnWrapper = styled.button`
 
   border-radius: 5rem;
   border: 0;
-  color: ${({ theme }) => theme.colors.pinterest_white};
   background-color: ${(props) => props.backgroundColor};
-
+  color: ${({ theme }) => theme.colors.pinterest_white};
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;

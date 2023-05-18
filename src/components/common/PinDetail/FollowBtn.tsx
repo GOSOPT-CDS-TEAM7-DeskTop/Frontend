@@ -48,9 +48,8 @@ const FollowBtnWrapper = styled.button`
 
   border-radius: 5rem;
   border: 0;
-  color: ${(props) => props.color};
   background-color: ${(props) => props.backgroundColor};
-
+  color: ${(props) => props.color};
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
