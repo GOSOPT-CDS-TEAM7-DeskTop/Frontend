@@ -21,10 +21,11 @@ export default UserProfile;
 
 const UserProfileWrapper = styled.section`
   display: flex;
-  flex-direction: column;
 
   justify-content: center;
   align-items: center;
+
+  flex-direction: column;
 
   margin: 2.4rem;
 `;
@@ -34,6 +35,7 @@ const Img = styled.img`
   height: 11rem;
 
   margin-bottom: 1.6rem;
+
   border-radius: 55%;
 `;
 
@@ -68,11 +70,11 @@ const ShareButton = styled.button`
   padding: 1.2rem 1.5rem;
   margin-top: 1.6rem;
 
+  border: none;
+  border-radius: 7.3rem;
+
   ${({ theme }) => theme.fonts.pinterest_header2};
   color: ${({ theme }) => theme.colors.pinterest_black};
   background-color: ${({ theme }) => theme.colors.pinterest_gray};
   font-weight: 700;
-
-  border: none;
-  border-radius: 7.3rem;
 `;
