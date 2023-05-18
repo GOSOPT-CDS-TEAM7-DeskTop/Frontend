@@ -1,6 +1,6 @@
-import UserProfile from "../components/layouts/UserProfile";
+import UserProfile from "../components/Mypage/UserProfile";
 import HeaderBar from "../components/layouts/HeaderBar";
-import CategorySection from "../components/layouts/CategorySection";
+import CategorySection from "../components/Mypage/CategorySection";
 
 function Mypage() {
   return (
