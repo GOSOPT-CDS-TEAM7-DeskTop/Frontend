@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SaveBtn from "../components/common/SaveBtn";
+import SaveBtn from "../components/common/PinDetail/SaveBtn";
 import FollowBtn from "../components/common/PinDetail/FollowBtn";
 
 function PinDetail() {
