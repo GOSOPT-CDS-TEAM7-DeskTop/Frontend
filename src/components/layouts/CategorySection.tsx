@@ -11,6 +11,16 @@ const CategorySection = () => {
         <img src="../../src/assets/icon/filter_icon.svg" alt="filter_icon" />
         <img src="../../src/assets/icon/plus_icon.svg" alt="plus_icon" />
       </FilterSection>
+      <CardSection>
+        <img src="../../src/assets/images/category_img_1.svg" alt="card_image_1" />
+        <img src="../../src/assets/images/category_img_2.svg" alt="card_image_2" />
+        <img src="../../src/assets/images/category_img_3.svg" alt="card_image_3" />
+        <img src="../../src/assets/images/category_img_4.svg" alt="card_image_4" />
+        <img src="../../src/assets/images/category_img_5.svg" alt="card_image_5" />
+        <img src="../../src/assets/images/category_img_6.svg" alt="card_image_6" />
+        <img src="../../src/assets/images/category_img_7.svg" alt="card_image_7" />
+        <img src="../../src/assets/images/category_img_8.svg" alt="card_image_8" />
+      </CardSection>
     </CategorySectionWrapper>
   );
 };
@@ -21,7 +31,7 @@ const CategorySectionWrapper = styled.section`
   display: flex;
   flex-direction: column;
 
-  margin: 4.5rem 5.6rem;
+  margin: 4.5rem 4.9rem;
 `;
 
 const CreatedStoredWrapper = styled.div`
@@ -62,5 +72,19 @@ const FilterSection = styled.section`
   img {
     width: 2.4rem;
     height: 2.4rem;
+  }
+`;
+
+const CardSection = styled.section`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1.6rem;
+
+  img {
+    width: 21.2rem;
+    height: 14rem;
+
+    border-radius: 1.2rem;
   }
 `;

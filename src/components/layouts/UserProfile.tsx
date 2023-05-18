@@ -26,7 +26,7 @@ const UserProfileWrapper = styled.section`
   justify-content: center;
   align-items: center;
 
-  margin: 2.4rem;
+  margin: 2.4rem 4.9rem;
 `;
 
 const Img = styled.img`
