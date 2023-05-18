@@ -67,6 +67,7 @@ const ButtonWrapper = styled.div`
 const ShareButton = styled.button`
   padding: 1.2rem 1.5rem;
   margin-top: 1.6rem;
+  margin-bottom: 0.5rem;
 
   ${({ theme }) => theme.fonts.pinterest_header2};
   color: ${({ theme }) => theme.colors.pinterest_black};
