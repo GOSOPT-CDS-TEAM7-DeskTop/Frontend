@@ -3,6 +3,7 @@ import { MasonryInfiniteGrid } from "@egjs/react-infinitegrid";
 import IMAGE from "../../assets/images/images";
 
 function MasonryLayout() {
+
   const childElements = IMAGE.map((element) => {
     return (
       <article>
@@ -27,6 +28,10 @@ const StyledMasonryInfiniteGrid = styled(MasonryInfiniteGrid)`
     img {
       width: 21rem;
       border-radius: 1.2rem;
+    }
+    &:hover {
+        filter: brightness(0.6); 
+        cursor: pointer;
     }
   }
 `;
