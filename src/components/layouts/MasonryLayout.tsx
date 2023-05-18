@@ -1,21 +1,15 @@
 import styled from "styled-components";
 import { MasonryInfiniteGrid } from "@egjs/react-infinitegrid";
 import IMAGE from "../../assets/images/images";
+import ArticleBrick from "../Home/ArticleBrick";
 
 function MasonryLayout() {
-
-  const childElements = IMAGE.map((element) => {
-    return (
-      <article>
-        <img key={element} src={element} alt={element} />
-      </article>
-    );
-  });
-
   return (
     <>
       <StyledMasonryInfiniteGrid className="container" gap={5}>
-        {childElements}
+        {IMAGE.map((src) => (
+          <ArticleBrick imgSrc={src} />
+        ))}
       </StyledMasonryInfiniteGrid>
     </>
   );
@@ -30,8 +24,8 @@ const StyledMasonryInfiniteGrid = styled(MasonryInfiniteGrid)`
       border-radius: 1.2rem;
     }
     &:hover {
-        filter: brightness(0.6); 
-        cursor: pointer;
+      filter: brightness(0.6);
+      cursor: pointer;
     }
   }
 `;
