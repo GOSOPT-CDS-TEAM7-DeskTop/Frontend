@@ -1,6 +1,7 @@
 import UserProfile from "../components/Mypage/UserProfile";
 import HeaderBar from "../components/layouts/HeaderBar";
 import CategorySection from "../components/Mypage/CategorySection";
+import QuestionMark from "../components/common/QuestionMark";
 
 function Mypage() {
   return (
@@ -8,6 +9,7 @@ function Mypage() {
         <HeaderBar/>
         <UserProfile/> 
         <CategorySection/>
+        <QuestionMark/>
      </>
 
     );
