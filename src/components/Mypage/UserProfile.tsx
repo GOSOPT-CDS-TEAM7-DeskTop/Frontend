@@ -43,23 +43,26 @@ const UserImageSection = styled.div`
 
 const UserName = styled.h1`
   margin-bottom: 1.2rem;
+  color: ${({ theme }) => theme.colors.pinterest_black};
 
   ${({ theme }) => theme.fonts.pinterest_title};
-  color: ${({ theme }) => theme.colors.pinterest_black};
+
   font-weight: 700;
 `;
 
 const UserId = styled.h4`
   margin-bottom: 0.8rem;
 
-  ${({ theme }) => theme.fonts.pinterest_header4};
   color: ${({ theme }) => theme.colors.pinterest_deepgray};
+  ${({ theme }) => theme.fonts.pinterest_header4};
+
   font-weight: 600;
 `;
 
 const FollowNum = styled.h3`
-  ${({ theme }) => theme.fonts.pinterest_header3};
   color: ${({ theme }) => theme.colors.pinterest_black};
+  ${({ theme }) => theme.fonts.pinterest_header3};
+
   font-weight: 600;
 `;
 
@@ -75,8 +78,9 @@ const ShareButton = styled.button`
   border: none;
   border-radius: 7.3rem;
 
-  ${({ theme }) => theme.fonts.pinterest_header2};
   color: ${({ theme }) => theme.colors.pinterest_black};
   background-color: ${({ theme }) => theme.colors.pinterest_gray};
+
+  ${({ theme }) => theme.fonts.pinterest_header2};
   font-weight: 700;
 `;

@@ -6,6 +6,7 @@ const colors = {
   pinterest_deepgray: "#5F5F5F",
   pinterest_gray: "#EFEFEF",
   pinterest_lightgray: "#EDEDED",
+  pinterest_white: "#FFFFFF",
 };
 
 const fonts = {
@@ -39,6 +40,7 @@ const fonts = {
   font-weight: 500;
   font-style: normal;
 `,
+
 };
 
 const theme: DefaultTheme = {
