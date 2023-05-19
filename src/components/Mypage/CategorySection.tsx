@@ -87,6 +87,7 @@ export default CategorySection;
 const CategorySectionWrapper = styled.section`
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   margin: 4.5rem 4.9rem;
 `;
@@ -129,6 +130,8 @@ const FilterSection = styled.span`
   flex-direction: row;
   justify-content: space-between;
 
+  width:180.8rem;
+
   margin: 0 11rem 2.4rem 11rem;
 
   img {
@@ -140,7 +143,10 @@ const FilterSection = styled.span`
 const CardSection = styled.section`
   display: flex;
   flex-direction: row;
+  
   justify-content: center;
+
+  width: 180.8rem;
 
   gap: 1.6rem;
 
