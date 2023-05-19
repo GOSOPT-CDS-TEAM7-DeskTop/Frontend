@@ -6,16 +6,16 @@ function Home() {
   return (
     <>
       <HeaderBar />
-      <MansoryWrapper>
+      <MasonryWrapper>
         <MasonryLayout />
-      </MansoryWrapper>
+      </MasonryWrapper>
     </>
   );
 }
 
 export default Home;
 
-const MansoryWrapper = styled.section`
+const MasonryWrapper = styled.section`
   width: 175rem;
   padding-top: 0.8rem;
   margin: 0 auto;
