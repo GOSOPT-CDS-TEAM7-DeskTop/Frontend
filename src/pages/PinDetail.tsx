@@ -1,12 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import HeaderBar from "../components/layouts/HeaderBar";
-import pinImg from "../assets/images/pinImg.png";
-import backSpanImg from "../assets/icon/pinDetail/icon_backspan.svg";
-import viewImg from "../assets/icon/pinDetail/icon_viewImg.svg";
-import moreImg from "../assets/icon/pinDetail/icon_more.svg";
-import linkImg from "../assets/icon/pinDetail/icon_link.svg";
-import saveImg from "../assets/icon/pinDetail/icon_save.svg";
+import pinImg from "../assets/pinDetail/pinImg.png";
+import backSpanImg from "../assets/pinDetail/icon_backspan.svg";
+import viewImg from "../assets/pinDetail/icon_viewImg.svg";
+import moreImg from "../assets/pinDetail/icon_more.svg";
+import linkImg from "../assets/pinDetail/icon_link.svg";
+import saveImg from "../assets/pinDetail/icon_save.svg";
+import profileImg from "../assets/pinDetail/icon_owners_profile.png";
+import dropdownImg from "../assets/pinDetail/icon_dropdown.svg";
 
 const PinDetail = () => {
   return (
@@ -27,17 +29,27 @@ const PinDetail = () => {
         <PinContentSection>
           <PinContentContainer>
             <PinSaveBox>
-              <div>
+              <EtcButtons>
                 <img src={moreImg} alt="viewImg" />
                 <img src={linkImg} alt="viewImg" />
                 <img src={saveImg} alt="viewImg" />
-              </div>
-              <div>
-                <button>프로필</button>
-                <button>저장</button>
-              </div>
+              </EtcButtons>
+              <DropDownButton>
+                <span>프로필</span>
+                <img src={dropdownImg} alt="dropdownImg" />
+              </DropDownButton>
+              <SaveButton>저장</SaveButton>
             </PinSaveBox>
-            <PinFollowBox></PinFollowBox>
+            <PinFollowBox>
+              <PinFollowProfile>
+                <ProfileImage src={profileImg} alt="profileImg"></ProfileImage>
+                <ProfileContent>
+                  <p>KJH</p>
+                  <small>팔로워 100000명</small>
+                </ProfileContent>
+              </PinFollowProfile>
+              <FollowButton>팔로우</FollowButton>
+            </PinFollowBox>
           </PinContentContainer>
           <PinReplContainer></PinReplContainer>
         </PinContentSection>
@@ -122,8 +134,114 @@ const PinContentSection = styled.section`
   border-radius: 0px 50px 0px 0px;
 `;
 
-const PinContentContainer = styled.div``;
-const PinSaveBox = styled.div`
+const PinContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
-const PinFollowBox = styled.div``;
+const PinSaveBox = styled.div`
+  display: flex;
+
+  width: 100%;
+
+  margin: 5rem 7rem 0rem 3.6rem;
+`;
+const EtcButtons = styled.div`
+  margin-right: 20.6rem;
+  & > img {
+    margin: 1.2rem;
+  }
+`;
+const DropDownButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 12rem;
+  height: 6rem;
+
+  margin-right: 2.4rem;
+  & > span {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+  }
+  & > img {
+    width: 2.4rem;
+    height: 2.4rem;
+    padding: 0.5rem 0.5rem 0.2rem 0.2rem;
+    margin-left: 0.6rem;
+  }
+`;
+// 추후 SaveButton 컴포넌트로 대체 예정
+const SaveButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+`;
+
+const PinFollowBox = styled.div`
+  display: flex;
+
+  width: 100%;
+
+  margin: 10rem 7rem 0rem 2.4rem;
+`;
+const PinFollowProfile = styled.div`
+  display: flex;
+  align-items: center;
+
+  height: 7.2rem;
+  margin-right: 29.6rem;
+`;
+const ProfileImage = styled.img`
+  width: 7.2rem;
+  height: 100%;
+
+  margin-right: 1.8rem;
+`;
+const ProfileContent = styled.article`
+  display: flex;
+  flex-direction: column;
+  & > p {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+
+    color: #000000;
+  }
+  & > small {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+
+    color: #5f5f5f;
+  }
+`;
+const FollowButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+`;
 const PinReplContainer = styled.div``;
