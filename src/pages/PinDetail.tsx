@@ -1,6 +1,6 @@
 import { useState } from "react";
-import SaveBtn from "../components/common/PinDetail/SaveBtn";
-import FollowBtn from "../components/common/PinDetail/FollowBtn";
+import SaveBtn from "../components/PinDetail/SaveBtn";
+import FollowBtn from "../components/PinDetail/FollowBtn";
 
 function PinDetail() {
   const [isSaveBtnClicked, setIsSaveBtnClicked] = useState(false);
