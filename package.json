@@ -10,10 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react-router-dom": "^6.4.3",
+    "@egjs/react-infinitegrid": "^4.9.0",
     "@types/styled-components": "^5.1.26",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.3",
     "styled-components": "^6.0.0-rc.1"
   },
   "devDependencies": {

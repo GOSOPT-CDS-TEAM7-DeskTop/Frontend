@@ -43,8 +43,8 @@ const UserImageSection = styled.div`
 
 const UserName = styled.h1`
   margin-bottom: 1.2rem;
-
   color: ${({ theme }) => theme.colors.pinterest_black};
+
   ${({ theme }) => theme.fonts.pinterest_title};
 
   font-weight: 700;
