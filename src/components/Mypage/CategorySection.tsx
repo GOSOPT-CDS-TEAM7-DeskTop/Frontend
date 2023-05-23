@@ -13,7 +13,7 @@ const CategorySection = () => {
       </FilterSection>
       <CardSection>
         <CardContainer>
-          <img src="../../src/assets/images/category_img_1.svg" alt="card_image_1" />
+          <img src="../../src/assets/images/category_img/category_img_1.png" alt="card_image_1" />
           <h2>모든 핀</h2>
           <CardInfo>
             <p>핀 124개</p>
@@ -21,7 +21,7 @@ const CategorySection = () => {
           </CardInfo>
         </CardContainer>
         <CardContainer>
-          <img src="../../src/assets/images/category_img_2.svg" alt="card_image_2" />
+          <img src="../../src/assets/images/category_img/category_img_2.png" alt="card_image_2" />
           <h2>해커톤</h2>
           <CardInfo>
             <p>핀 16개</p>
@@ -29,7 +29,7 @@ const CategorySection = () => {
           </CardInfo>
         </CardContainer>
         <CardContainer>
-          <img src="../../src/assets/images/category_img_3.svg" alt="card_image_3" />
+          <img src="../../src/assets/images/category_img/category_img_3.png" alt="card_image_3" />
           <h2>랜딩페이지</h2>
           <CardInfo>
             <p>핀 17개</p>
@@ -37,7 +37,7 @@ const CategorySection = () => {
           </CardInfo>
         </CardContainer>
         <CardContainer>
-          <img src="../../src/assets/images/category_img_4.svg" alt="card_image_4" />
+          <img src="../../src/assets/images/category_img/category_img_4.png" alt="card_image_4" />
           <h2>프레젠테이션</h2>
           <CardInfo>
             <p>핀 12개</p>
@@ -45,7 +45,7 @@ const CategorySection = () => {
           </CardInfo>
         </CardContainer>
         <CardContainer>
-          <img src="../../src/assets/images/category_img_5.svg" alt="card_image_5" />
+          <img src="../../src/assets/images/category_img/category_img_5.png" alt="card_image_5" />
           <h2>팜플렛</h2>
           <CardInfo>
             <p>핀 3개</p>
@@ -53,7 +53,7 @@ const CategorySection = () => {
           </CardInfo>
         </CardContainer>
         <CardContainer>
-          <img src="../../src/assets/images/category_img_6.svg" alt="card_image_6" />
+          <img src="../../src/assets/images/category_img/category_img_6.png" alt="card_image_6" />
           <h2>명함 디자인</h2>
           <CardInfo>
             <p>핀 17개</p>
@@ -61,7 +61,7 @@ const CategorySection = () => {
           </CardInfo>
         </CardContainer>
         <CardContainer>
-          <img src="../../src/assets/images/category_img_7.svg" alt="card_image_7" />
+          <img src="../../src/assets/images/category_img/category_img_7.png" alt="card_image_7" />
           <h2>UI 디자인</h2>
           <CardInfo>
             <p>핀 17개</p>
@@ -69,7 +69,7 @@ const CategorySection = () => {
           </CardInfo>
         </CardContainer>
         <CardContainer>
-          <img src="../../src/assets/images/category_img_8.svg" alt="card_image_8" />
+          <img src="../../src/assets/images/category_img/category_img_8.png" alt="card_image_8" />
           <h2>대시보드 디자인</h2>
           <CardInfo>
             <p>핀 18개</p>
