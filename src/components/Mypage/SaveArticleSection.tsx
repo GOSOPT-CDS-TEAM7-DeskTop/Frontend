@@ -18,14 +18,16 @@ const SaveArticleSection = () => {
 export default SaveArticleSection;
 
 const SaveArticleSectionWrapper = styled.section`
-  margin: 0 15rem;
+  margin: 0 6rem;
 
   span {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    height: 4rem;
+    height: 3.6rem;
+
+    margin-bottom: 2.6rem;
   }
 
   h1 {
@@ -48,5 +50,5 @@ const SaveArticleSectionWrapper = styled.section`
 
 const MansoryWrapper = styled.section`
   width: 100%;
-  padding: 0 6rem;
+  padding: 0;
 `;
