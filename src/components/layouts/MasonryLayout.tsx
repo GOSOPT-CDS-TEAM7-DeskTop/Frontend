@@ -26,7 +26,11 @@ interface IMasonryInfiniteGridProps {
 function MasonryLayout({ ishome, articleData }: IMasonryInfiniteGridProps) {
   return (
     <>
-      <MasonryInfiniteGrid gap={ishome ? 5 : 1.6}>
+      <MasonryInfiniteGrid
+        gap={ishome ? 5 : 1.6}
+        onRequestAppend={() => {
+          console.log("무한스크롤");
+        }}>
         {ishome
           ? articleData?.map(({ id, image }) => (
               <Link
