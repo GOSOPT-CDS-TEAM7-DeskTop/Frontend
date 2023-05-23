@@ -1,17 +1,22 @@
 import { styled } from "styled-components";
+import MasonryLayout from "../components/layouts/MasonryLayout";
+import HeaderBar from "../components/layouts/HeaderBar";
 
 function Home() {
   return (
     <>
-      <PinterestTitleWrapper>PinterestTitleHeader</PinterestTitleWrapper>
-      Home
+      <HeaderBar />
+      <MasonryWrapper>
+        <MasonryLayout />
+      </MasonryWrapper>
     </>
   );
 }
 
 export default Home;
 
-const PinterestTitleWrapper = styled.h1`
-  color: ${({ theme }) => theme.colors.pinterest_red};
-  ${({ theme }) => theme.fonts.pinterest_title};
+const MasonryWrapper = styled.section`
+  width: 175rem;
+  padding-top: 0.8rem;
+  margin: 0 auto;
 `;

@@ -1,14 +1,13 @@
-import React, { useContext } from "react";
-import styled, { ThemeContext } from "styled-components";
+import React from "react";
+import styled, { css } from "styled-components";
 
-type FollowBtnProps = {
+interface IFollowBtnProps {
   setIsFollowBtnClicked: Function;
   isFollowBtnClicked: boolean;
-};
+}
 
-function FollowBtn(props: FollowBtnProps) {
+function FollowBtn(props: IFollowBtnProps) {
   const { isFollowBtnClicked, setIsFollowBtnClicked } = props;
-  const themeContext = useContext(ThemeContext);
 
   const toggleFollowBtn = () => {
     setIsFollowBtnClicked((isFollowBtnClicked: any) => !isFollowBtnClicked);
@@ -16,23 +15,9 @@ function FollowBtn(props: FollowBtnProps) {
 
   return (
     <>
-      <>
-        {isFollowBtnClicked ? (
-          <FollowBtnWrapper
-            onClick={toggleFollowBtn}
-            color={themeContext["colors"]["pinterest_black"]}
-            backgroundColor={themeContext["colors"]["pinterest_lightgray"]}>
-            팔로우
-          </FollowBtnWrapper>
-        ) : (
-          <FollowBtnWrapper
-            onClick={toggleFollowBtn}
-            color={themeContext["colors"]["pinterest_white"]}
-            backgroundColor={themeContext["colors"]["pinterest_black"]}>
-            팔로잉
-          </FollowBtnWrapper>
-        )}
-      </>
+      <FollowBtnWrapper isFollowBtnClicked={isFollowBtnClicked} onClick={toggleFollowBtn}>
+        {isFollowBtnClicked ? "팔로잉" : "팔로우"}
+      </FollowBtnWrapper>
     </>
   );
 }
@@ -48,8 +33,17 @@ const FollowBtnWrapper = styled.button`
 
   border-radius: 5rem;
   border: 0;
-  background-color: ${(props) => props.backgroundColor};
-  color: ${(props) => props.color};
+
+  /* 색상 */
+  ${(props: IFollowBtnProps) => {
+    const isFollowBtnClicked = props.isFollowBtnClicked;
+    return css`
+      color: ${({ theme }) => (isFollowBtnClicked ? theme.colors.pinterest_white : theme.colors.pinterest_black)};
+      background-color: ${({ theme }) =>
+        isFollowBtnClicked ? theme.colors.pinterest_black : theme.colors.pinterest_lightgray};
+    `;
+  }}
+
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
