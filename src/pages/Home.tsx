@@ -24,7 +24,7 @@ function Home() {
     <>
       <HeaderBar />
       <MasonryWrapper>
-        <MasonryLayout ishome={true} articleData={articleData} />
+        <MasonryLayout ishome={true} articleData={articleData} getAllArticle={getAllArticle} />
       </MasonryWrapper>
     </>
   );
