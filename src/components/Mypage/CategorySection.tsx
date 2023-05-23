@@ -89,7 +89,7 @@ const CategorySectionWrapper = styled.section`
   flex-direction: column;
   align-items: center;
 
-  margin: 4.5rem 4.9rem;
+  margin: 4.5rem 5.6rem;
 `;
 
 const CreatedStoredWrapper = styled.div`
@@ -132,7 +132,7 @@ const FilterSection = styled.span`
 
   width:180.8rem;
 
-  margin: 0 11rem 2.4rem 11rem;
+  margin-bottom: 2.4rem;
 
   img {
     width: 2.4rem;
@@ -164,7 +164,7 @@ const CardContainer = styled.div`
   width: 21.2rem;
   height: 14rem;
 
-  margin-bottom: 4.5rem;
+ 
 
   h2 {
     position: absolute;
