@@ -31,16 +31,16 @@ const ReplyLayout = () => {
       <ReplyWrapper>
         <ReplyImg src={userProfile} alt="replyComment" />
         <ReplySection>
-          <ReplyMainBox>
+          <ReplyMainContainer>
             <p>{dummyReply[0].replyUser[0].userName}</p>
             <small>{dummyReply[0].replyContent}</small>
-          </ReplyMainBox>
-          <ReplySubBox>
+          </ReplyMainContainer>
+          <ReplySubContainer>
             <small>{dummyReply[0].replyTime}</small>
             <small>답글</small>
             <img src={heartIcon} alt="heartIcon" />
             <small>{dummyReply[0].replyHeartNum}</small>
-          </ReplySubBox>
+          </ReplySubContainer>
         </ReplySection>
       </ReplyWrapper>
     </>
@@ -68,12 +68,13 @@ const ReplyMainBox = styled.div`
   display: flex;
   margin-bottom: 0.8rem;
   & > p {
+    margin-right: 0.8rem;
+
     font-family: "Roboto";
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
     line-height: 28px;
-    margin-right: 0.8rem;
   }
   & > small {
     font-family: "Roboto";
@@ -87,14 +88,14 @@ const ReplySubBox = styled.div`
   display: flex;
 
   & > small {
+    margin-right: 1.4rem;
+
+    color: #616161;
     font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 23px;
-
-    color: #616161;
-    margin-right: 1.4rem;
   }
   & > img {
     width: 2.4rem;
