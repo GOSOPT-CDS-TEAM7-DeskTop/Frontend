@@ -1,12 +1,17 @@
 import { styled } from "styled-components";
 
-interface IImgSrc {
+interface PropsData {
   imgSrc: string;
+  isHome: boolean;
 }
 
-function ArticleBrick({ imgSrc }: IImgSrc) {
+interface IsHome {
+  isHome: boolean;
+}
+
+function ArticleBrick({ imgSrc, isHome }: PropsData) {
   return (
-    <ArticleBrickWrapper>
+    <ArticleBrickWrapper isHome={isHome}>
       <img key={imgSrc} src={imgSrc} alt={imgSrc} />
     </ArticleBrickWrapper>
   );
@@ -14,9 +19,9 @@ function ArticleBrick({ imgSrc }: IImgSrc) {
 
 export default ArticleBrick;
 
-const ArticleBrickWrapper = styled.article`
+const ArticleBrickWrapper = styled.article<IsHome>`
   img {
-    width: 23rem;
+    width: ${({ isHome }) => isHome ? "23.6rem" : "21.2rem"};
     border-radius: 1.2rem;
   }
   &:hover {
