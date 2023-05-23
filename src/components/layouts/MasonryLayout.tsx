@@ -1,6 +1,6 @@
 import { MasonryInfiniteGrid } from "@egjs/react-infinitegrid";
 import IMAGE from "../../assets/images/images";
-import ArticleBrick from "../Home/ArticleBrick";
+import ArticleBrick from "../common/ArticleBrick";
 
 function MasonryLayout() {
   return (
