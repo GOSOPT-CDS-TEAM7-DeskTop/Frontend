@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SaveBtn from "../components/PinDetail/SaveBtn";
 import FollowBtn from "../components/PinDetail/FollowBtn";
 
@@ -8,8 +8,13 @@ function PinDetail() {
 
   return (
     <>
-      <SaveBtn isSaveBtnClicked={isSaveBtnClicked} setIsSaveBtnClicked={setIsSaveBtnClicked} />
-      <FollowBtn isFollowBtnClicked={isFollowBtnClicked} setIsFollowBtnClicked={setIsFollowBtnClicked} />
+      <SaveBtn isSaveBtnClicked={isSaveBtnClicked} setIsSaveBtnClicked={setIsSaveBtnClicked}>
+        {isSaveBtnClicked ? "저장됨" : "저장"}
+      </SaveBtn>
+
+      <FollowBtn isFollowBtnClicked={isFollowBtnClicked} setIsFollowBtnClicked={setIsFollowBtnClicked}>
+        {isFollowBtnClicked ? "팔로잉" : "팔로우"}
+      </FollowBtn>
     </>
   );
 }

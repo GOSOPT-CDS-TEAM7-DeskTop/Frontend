@@ -2,21 +2,21 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 interface IFollowBtnProps {
+  children: React.ReactNode;
   setIsFollowBtnClicked: Function;
   isFollowBtnClicked: boolean;
 }
 
 function FollowBtn(props: IFollowBtnProps) {
-  const { isFollowBtnClicked, setIsFollowBtnClicked } = props;
+  const { children, isFollowBtnClicked, setIsFollowBtnClicked } = props;
 
   const toggleFollowBtn = () => {
     setIsFollowBtnClicked((isFollowBtnClicked: any) => !isFollowBtnClicked);
   };
-
   return (
     <>
       <FollowBtnWrapper isFollowBtnClicked={isFollowBtnClicked} onClick={toggleFollowBtn}>
-        {isFollowBtnClicked ? "팔로잉" : "팔로우"}
+        {children}
       </FollowBtnWrapper>
     </>
   );

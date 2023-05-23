@@ -2,12 +2,13 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 interface ISaveBtnProps {
+  children: React.ReactNode;
   setIsSaveBtnClicked: Function;
   isSaveBtnClicked: boolean;
 }
 
 function SaveBtn(props: ISaveBtnProps) {
-  const { isSaveBtnClicked, setIsSaveBtnClicked } = props;
+  const { children, isSaveBtnClicked, setIsSaveBtnClicked } = props;
 
   const toggleSaveBtn = () => {
     setIsSaveBtnClicked((isSaveBtnClicked: any) => !isSaveBtnClicked);
@@ -15,7 +16,7 @@ function SaveBtn(props: ISaveBtnProps) {
   return (
     <>
       <SaveBtnWrapper isSaveBtnClicked={isSaveBtnClicked} onClick={toggleSaveBtn}>
-        {isSaveBtnClicked ? "저장됨" : "저장"}
+        {children}
       </SaveBtnWrapper>
     </>
   );
