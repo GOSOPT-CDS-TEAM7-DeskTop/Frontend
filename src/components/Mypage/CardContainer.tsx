@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 interface CardContainerProps {
   imgSrc: string;
+  alt: string;
   title: string;
   info: string[];
 }
