@@ -2,16 +2,16 @@ import { styled } from "styled-components";
 
 interface PropsData {
   imgSrc: string;
-  isHome: boolean;
+  ishome: boolean;
 }
 
 interface IsHome {
-  isHome: boolean;
+  ishome: boolean;
 }
 
-function ArticleBrick({ imgSrc, isHome }: PropsData) {
+function ArticleBrick({ imgSrc, ishome }: PropsData) {
   return (
-    <ArticleBrickWrapper isHome={isHome}>
+    <ArticleBrickWrapper ishome={ishome}>
       <img key={imgSrc} src={imgSrc} alt={imgSrc} />
     </ArticleBrickWrapper>
   );
@@ -21,7 +21,7 @@ export default ArticleBrick;
 
 const ArticleBrickWrapper = styled.article<IsHome>`
   img {
-    width: ${({ isHome }) => isHome ? "23.6rem" : "21.2rem"};
+    width: ${({ ishome }) => (ishome ? "23.6rem" : "21.2rem")};
     border-radius: 1.2rem;
   }
   &:hover {

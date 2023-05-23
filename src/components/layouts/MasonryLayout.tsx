@@ -1,5 +1,6 @@
 import { MasonryInfiniteGrid } from "@egjs/react-infinitegrid";
 import ArticleBrick from "../common/ArticleBrick";
+import { Link } from "react-router-dom";
 
 interface IMypageArticle {
   id: number;
@@ -18,17 +19,24 @@ interface IHomeArticle extends IMypageArticle {
 }
 
 interface IMasonryInfiniteGridProps {
-  isHome: boolean;
+  ishome: boolean;
   articleData?: IHomeArticle[] | IMypageArticle[];
 }
 
-function MasonryLayout({ isHome, articleData }: IMasonryInfiniteGridProps) {
+function MasonryLayout({ ishome, articleData }: IMasonryInfiniteGridProps) {
   return (
     <>
-      <MasonryInfiniteGrid gap={isHome ? 5 : 1.6}>
-        {articleData?.map(({ id, image }) => (
-          <ArticleBrick key={id} imgSrc={image} isHome={isHome}/>
-        ))}
+      <MasonryInfiniteGrid gap={ishome ? 5 : 1.6}>
+        {ishome
+          ? articleData?.map(({ id, image }) => (
+              <Link
+                to={{
+                  pathname: `/pin/${id}`,
+                }}>
+                <ArticleBrick key={id} imgSrc={image} ishome={ishome} />
+              </Link>
+            ))
+          : articleData?.map(({ id, image }) => <ArticleBrick key={id} imgSrc={image} ishome={ishome} />)}
       </MasonryInfiniteGrid>
     </>
   );
