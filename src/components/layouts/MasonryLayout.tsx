@@ -1,13 +1,33 @@
 import { MasonryInfiniteGrid } from "@egjs/react-infinitegrid";
-import IMAGE from "../../assets/images/images";
-import ArticleBrick from "../Home/ArticleBrick";
+import ArticleBrick from "../common/ArticleBrick";
 
-function MasonryLayout() {
+interface IMypageArticle {
+  id: number;
+  image: string;
+}
+
+interface IHomeArticle extends IMypageArticle {
+  altTxt: string;
+  content: string;
+  createdTime: string;
+  renderUrl: string;
+  title: string;
+  writerFollower: number;
+  writerImage: string;
+  writerNickname: string;
+}
+
+interface IMasonryInfiniteGridProps {
+  isHome: boolean;
+  articleData?: IHomeArticle[] | IMypageArticle[];
+}
+
+function MasonryLayout({ isHome, articleData }: IMasonryInfiniteGridProps) {
   return (
     <>
-      <MasonryInfiniteGrid gap={5}>
-        {IMAGE.map((src) => (
-          <ArticleBrick imgSrc={src} />
+      <MasonryInfiniteGrid gap={isHome ? 5 : 1.6}>
+        {articleData?.map(({ id, image }) => (
+          <ArticleBrick key={id} imgSrc={image} isHome={isHome}/>
         ))}
       </MasonryInfiniteGrid>
     </>
