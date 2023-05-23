@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import MasonryLayout from "../layouts/MasonryLayout";
 
 const SaveArticleSection = () => {
   return (
@@ -7,6 +8,9 @@ const SaveArticleSection = () => {
         <h1>정리되지 않은 아이디어</h1>
         <button type="button">정리하기</button>
       </span>
+      <MansoryWrapper>
+      <MasonryLayout />
+      </MansoryWrapper>
     </SaveArticleSectionWrapper>
   );
 };
@@ -40,4 +44,9 @@ const SaveArticleSectionWrapper = styled.section`
 
     ${({ theme }) => theme.fonts.pinterest_header2};
   }
+`;
+
+const MansoryWrapper = styled.section`
+  width: 100%;
+  padding: 0 6rem;
 `;
