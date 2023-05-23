@@ -5,7 +5,7 @@ import ArticleBrick from "../Home/ArticleBrick";
 function MasonryLayout() {
   return (
     <>
-      <MasonryInfiniteGrid className="container" gap={5}>
+      <MasonryInfiniteGrid gap={5}>
         {IMAGE.map((src) => (
           <ArticleBrick imgSrc={src} />
         ))}
