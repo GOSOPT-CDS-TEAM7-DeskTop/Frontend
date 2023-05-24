@@ -9,7 +9,7 @@ function Home() {
 
   const getAllArticle = async () => {
     try {
-      const res = await axios.get("http://13.209.7.118:8080/pin");
+      const res = await axios.get("https://team7.collab-pinterest.p-e.k/pin");
       setArticleData(res.data.data.pins);
     } catch (err) {
       console.log(err);
