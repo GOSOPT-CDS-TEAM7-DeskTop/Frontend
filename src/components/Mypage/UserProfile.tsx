@@ -1,15 +1,46 @@
 import { styled } from "styled-components";
+import axios from "axios";
+import { useState, useEffect } from "react";
+
+interface User {
+  code: number;
+  message: string;
+  data: UserData;
+}
+
+interface UserData {
+  userImage: string;
+  nickname: string;
+  account: string;
+  following: number;
+}
 
 function UserProfile() {
+  const [userData, setUserData] = useState<UserData | null>(null);
+
+  const getUserData = async () => {
+    try {
+      const res = await axios.get<User>("https://team7.collab-pinterest.p-e.kr/user");
+      console.log(res.data);
+      setUserData(res.data.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    getUserData();
+  }, []);
+
   return (
     <>
       <UserProfileWrapper>
         <UserImageSection>
-          <img src="../../src/assets/images/userImage.svg" alt="userImage" />
+          <img src={userData?.userImage} alt="userImage" />
         </UserImageSection>
-        <UserName>라망</UserName>
-        <UserId>@ca090434</UserId>
-        <FollowNum>팔로잉 0명</FollowNum>
+        <UserName>{userData?.nickname}</UserName>
+        <UserId>{userData?.account}</UserId>
+        <FollowNum>팔로잉 {userData?.following}명</FollowNum>
         <ButtonSection>
           <ShareButton>공유</ShareButton>
           <ShareButton>프로필 수정</ShareButton>
@@ -33,12 +64,14 @@ const UserProfileWrapper = styled.section`
 `;
 
 const UserImageSection = styled.div`
-  width: 11rem;
-  height: 11rem;
-
   margin-bottom: 1.6rem;
 
-  border-radius: 55%;
+  img {
+    width: 11rem;
+    height: 11rem;
+
+    border-radius: 55%;
+  }
 `;
 
 const UserName = styled.h1`

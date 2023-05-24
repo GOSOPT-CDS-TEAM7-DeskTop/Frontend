@@ -6,8 +6,29 @@ import iconAlarm from "../../assets/icon/icon_alarm.svg";
 import iconMessage from "../../assets/icon/icon _message.svg";
 import userProfile from "../../assets/icon/user_Profile.svg";
 import btnArrowDown from "../../assets/icon/btn_arrow_down.svg";
+import { useRef } from "react";
 
-function HeaderBar() {
+interface ITitle {
+  title?: string;
+}
+
+interface ISearchArticle {
+  searchArticle: (title: ITitle) => Promise<void>;
+}
+
+function HeaderBar({ searchArticle }: ISearchArticle) {
+  /** 검색창 useRef */
+  const inputRef = useRef<HTMLInputElement | null>(null);
+
+  /** 아티클 검색 */
+  const searchArticleFn = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      const title = inputRef.current?.value;
+      console.log(title);
+      searchArticle(title as ITitle);
+    }
+    return;
+  };
   return (
     <>
       <HeaderBarWrapper>
@@ -19,7 +40,7 @@ function HeaderBar() {
           </button>
         </NavSection>
         <SearchSection>
-          <input type="text" placeholder="핀 검색" />
+          <input type="text" placeholder="핀 검색" ref={inputRef} onKeyDown={searchArticleFn} />
           <img src={readingGlasses} alt="readingGlasses" />
         </SearchSection>
         <ManageSection>
