@@ -1,38 +1,12 @@
 import { styled } from "styled-components";
 import MasonryLayout from "../components/layouts/MasonryLayout";
 import HeaderBar from "../components/layouts/HeaderBar";
-import axios from "axios";
-import { useEffect, useState } from "react";
-
-interface ITitle {
-  title?: string;
-}
+import articleHooks from "../hooks/articleHooks";
+import QuestionMark from "../components/common/QuestionMark";
 
 function Home() {
-  const [articleData, setArticleData] = useState();
 
-  const getAllArticle = async () => {
-    try {
-      const res = await axios.get("https://team7.collab-pinterest.p-e.kr/pin");
-
-      setArticleData(res.data.data.pins);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  const searchArticle = async (title: ITitle) => {
-    try {
-      const res = await axios.get(`https://team7.collab-pinterest.p-e.kr/pin/?title=${title}`);
-      setArticleData(res.data.data.pins);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  useEffect(() => {
-    getAllArticle();
-    return () => {};
-  }, []);
+  const { articleData, getAllArticle, searchArticle } = articleHooks();
 
   return (
     <>
@@ -40,6 +14,7 @@ function Home() {
       <MasonryWrapper>
         <MasonryLayout ishome={true} articleData={articleData} getAllArticle={getAllArticle} />
       </MasonryWrapper>
+      <QuestionMark />
     </>
   );
 }
