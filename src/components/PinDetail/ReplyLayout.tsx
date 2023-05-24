@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import heartIcon from "../../assets/icon/icon_heart.png";
 import userProfile from "../../assets/images/icon_profile_comment.png";
-const ReplyLayout = () => {
+
+function ReplyLayout() {
   // **서버에서 받아오는 댓글 관련 정보
   //- 댓글 고유 식별 번호 (PK)
   // - 내용
@@ -45,7 +46,7 @@ const ReplyLayout = () => {
       </ReplyWrapper>
     </>
   );
-};
+}
 
 export default ReplyLayout;
 
@@ -64,7 +65,7 @@ const ReplySection = styled.section`
   display: flex;
   flex-direction: column;
 `;
-const ReplyMainBox = styled.div`
+const ReplyMainContainer = styled.div`
   display: flex;
   margin-bottom: 0.8rem;
   & > p {
@@ -84,7 +85,7 @@ const ReplyMainBox = styled.div`
     line-height: 28px;
   }
 `;
-const ReplySubBox = styled.div`
+const ReplySubContainer = styled.div`
   display: flex;
 
   & > small {
