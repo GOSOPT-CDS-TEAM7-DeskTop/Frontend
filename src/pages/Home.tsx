@@ -14,6 +14,7 @@ function Home() {
   const getAllArticle = async () => {
     try {
       const res = await axios.get("https://team7.collab-pinterest.p-e.kr/pin");
+
       setArticleData(res.data.data.pins);
     } catch (err) {
       console.log(err);
@@ -30,7 +31,7 @@ function Home() {
 
   useEffect(() => {
     getAllArticle();
-    return ()=>{}
+    return () => {};
   }, []);
 
   return (
