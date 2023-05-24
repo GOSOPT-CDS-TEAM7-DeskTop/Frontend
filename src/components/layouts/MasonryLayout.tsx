@@ -29,9 +29,10 @@ function MasonryLayout({ ishome, articleData, getAllArticle }: IMasonryInfiniteG
     <>
       <MasonryInfiniteGrid
         gap={ishome ? 5 : 1.6}
-        onRequestAppend={() => {
-          getAllArticle();
-        }}>
+        // onRequestAppend={() => {
+        //   getAllArticle();
+        // }}
+        >
         {ishome
           ? articleData?.map(({ id, image }) => (
               <Link
