@@ -9,13 +9,11 @@ import ReplyLayout from "../components/PinDetail/ReplyLayout";
 
 import styled from "styled-components";
 import HeaderBar from "../components/layouts/HeaderBar";
-import pinImg from "../assets/pinDetail/pinImg.png";
 import backSpanImg from "../assets/pinDetail/icon_backspan.svg";
 import viewImg from "../assets/pinDetail/icon_viewImg.svg";
 import moreImg from "../assets/pinDetail/icon_more.svg";
 import linkImg from "../assets/pinDetail/icon_link.svg";
 import saveImg from "../assets/pinDetail/icon_save.svg";
-import profileImg from "../assets/pinDetail/icon_owners_profile.png";
 import dropdownImg from "../assets/pinDetail/icon_dropdown.svg";
 import myprofileImg from "../assets/pinDetail/icon_my_profile.svg";
 import emojiImg from "../assets/pinDetail/icon_emoji.svg";
@@ -31,9 +29,6 @@ function PinDetail() {
   const getPinDetail = async () => {
     try {
       const res = await axios.get(`https://team7.collab-pinterest.p-e.kr/pin/${pinId}`);
-      // console.log(res.data.data.pin);
-      // console.log(res.data.data.comment);
-
       setPinDetailData(res.data.data.pin);
       setPinCommentData(res.data.data.comment);
     } catch (err) {
