@@ -26,6 +26,20 @@ function PinDetail() {
   const [pinDetailData, setPinDetailData] = useState([]);
   const [pinCommentData, setPinCommentData] = useState([]);
 
+  // follow 버튼 post 하는 부분
+  const clickFollowBtn = () => {
+    postFollow();
+  };
+  const postFollow = async () => {
+    try {
+      const res = await axios.post(`https://team7.collab-pinterest.p-e.kr/user/follow`, { followedUserId });
+      console.log(res);
+    } catch (err) {
+      console.log("postFollow error: ", err);
+    }
+  };
+
+  // 게시글 상세정보를 get 하는 부분
   const getPinDetail = async () => {
     try {
       const res = await axios.get(`https://team7.collab-pinterest.p-e.kr/pin/${pinId}`);
@@ -85,7 +99,10 @@ function PinDetail() {
                   <small>팔로워 {pinDetailData.writerFollower}명</small>
                 </ProfileContent>
               </PinFollowProfile>
-              <FollowBtn isFollowBtnClicked={isFollowBtnClicked} setIsFollowBtnClicked={setIsFollowBtnClicked}>
+              <FollowBtn
+                isFollowBtnClicked={isFollowBtnClicked}
+                setIsFollowBtnClicked={setIsFollowBtnClicked}
+                clickFollowBtn={clickFollowBtn}>
                 {isFollowBtnClicked ? "팔로잉" : "팔로우"}
               </FollowBtn>
             </PinFollowBox>

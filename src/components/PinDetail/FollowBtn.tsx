@@ -5,13 +5,15 @@ interface IFollowBtnProps {
   children: React.ReactNode;
   setIsFollowBtnClicked: Function;
   isFollowBtnClicked: boolean;
+  clickFollowBtn: Function;
 }
 
 function FollowBtn(props: IFollowBtnProps) {
-  const { children, isFollowBtnClicked, setIsFollowBtnClicked } = props;
+  const { children, isFollowBtnClicked, setIsFollowBtnClicked, clickFollowBtn } = props;
 
   const toggleFollowBtn = () => {
     setIsFollowBtnClicked((isFollowBtnClicked: any) => !isFollowBtnClicked);
+    clickFollowBtn();
   };
   return (
     <>
