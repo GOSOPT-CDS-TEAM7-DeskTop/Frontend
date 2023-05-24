@@ -1,16 +1,36 @@
 import { styled } from "styled-components";
 import MasonryLayout from "../layouts/MasonryLayout";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 const SaveArticleSection = () => {
+  const [articleData, setArticleData] = useState();
+
+  const getPinnedArticle = async () => {
+    try {
+      const res = await axios.get("https://team7.collab-pinterest.p-e.kr/user/save");
+      const pins = res.data.data;
+
+      setArticleData(pins);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    getPinnedArticle();
+    return () => {};
+  }, []);
+
   return (
     <SaveArticleSectionWrapper>
       <span>
         <h1>정리되지 않은 아이디어</h1>
         <button type="button">정리하기</button>
       </span>
-      <MansoryWrapper>
-      <MasonryLayout />
-      </MansoryWrapper>
+      <MasonryWrapper>
+        <MasonryLayout ishome={false} articleData={articleData} />
+      </MasonryWrapper>
     </SaveArticleSectionWrapper>
   );
 };
@@ -48,7 +68,7 @@ const SaveArticleSectionWrapper = styled.section`
   }
 `;
 
-const MansoryWrapper = styled.section`
+const MasonryWrapper = styled.section`
   width: 100%;
   padding: 0;
 `;
