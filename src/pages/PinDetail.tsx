@@ -40,6 +40,7 @@ function PinDetail() {
   const postComment = async () => {
     try {
       const res = await axios.post(`https://team7.collab-pinterest.p-e.kr/comment/${pinId}`, { content });
+      location.reload();
       console.log(res.data.data);
     } catch (err) {
       console.log("postComment error:", err);
