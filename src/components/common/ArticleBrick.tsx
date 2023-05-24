@@ -29,3 +29,4 @@ const ArticleBrickWrapper = styled.article<IsHome>`
     cursor: pointer;
   }
 `;
+

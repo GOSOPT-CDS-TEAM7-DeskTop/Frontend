@@ -17,6 +17,8 @@ const QuestionMarkWrapper = styled.div`
   bottom: 5%;
   right: 5%;
 
+  z-index: 100;
+
   button {
     position: relative;
     width: 5rem;
