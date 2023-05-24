@@ -39,8 +39,8 @@ function UserProfile() {
           <img src={userData?.userImage} alt="userImage" />
         </UserImageSection>
         <UserName>{userData?.nickname}</UserName>
-        <UserId>@ca090434</UserId>
-        <FollowNum>팔로잉 0명</FollowNum>
+        <UserId>{userData?.account}</UserId>
+        <FollowNum>팔로잉 {userData?.following}명</FollowNum>
         <ButtonSection>
           <ShareButton>공유</ShareButton>
           <ShareButton>프로필 수정</ShareButton>
