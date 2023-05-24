@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import axios from "axios";
 import { useRecoilState } from "recoil";
 import { userDataAtom } from "../atoms/atom";
+import { useSetRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 
 interface User {
     code: number;
@@ -18,7 +20,8 @@ interface UserData {
 
 
 const userDataHooks = () => {
-    const [userData, setUserData] = useRecoilState(userDataAtom);
+    const userData = useRecoilValue(userDataAtom);
+    const setUserData= useSetRecoilState(userDataAtom);
 
     const getUserData = async () => {
         try {

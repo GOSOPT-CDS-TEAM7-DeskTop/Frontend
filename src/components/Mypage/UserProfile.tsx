@@ -1,7 +1,10 @@
 import { styled } from "styled-components";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useRecoilValue } from "recoil";
+import { userDataAtom } from "../../atoms/atom";
 
+/*
 interface User {
   code: number;
   message: string;
@@ -14,8 +17,11 @@ interface UserData {
   account: string;
   following: number;
 }
+*/
 
 function UserProfile() {
+  const userData = useRecoilValue(userDataAtom);
+  /*
   const [userData, setUserData] = useState<UserData | null>(null);
 
   const getUserData = async () => {
@@ -31,6 +37,7 @@ function UserProfile() {
   useEffect(() => {
     getUserData();
   }, []);
+  */
 
   return (
     <>

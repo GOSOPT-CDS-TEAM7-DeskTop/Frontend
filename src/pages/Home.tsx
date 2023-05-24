@@ -9,6 +9,7 @@ function Home() {
   const { userData } = userDataHooks();
 
   const { articleData, getAllArticle, searchArticle } = articleHooks();
+  console.log(userData);
 
   return (
     <>
