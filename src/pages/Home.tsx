@@ -6,10 +6,9 @@ import QuestionMark from "../components/common/QuestionMark";
 import userDataHooks from "../hooks/userDataHooks";
 
 function Home() {
-  const { userData } = userDataHooks();
 
   const { articleData, getAllArticle, searchArticle } = articleHooks();
-  console.log(userData);
+  
 
   return (
     <>

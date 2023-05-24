@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useRecoilValue } from "recoil";
 import { userDataAtom } from "../../atoms/atom";
-
+import userDataHooks from "../../hooks/userDataHooks";
 /*
 interface User {
   code: number;
@@ -20,7 +20,10 @@ interface UserData {
 */
 
 function UserProfile() {
+
+  
   const userData = useRecoilValue(userDataAtom);
+  console.log(userData);
   /*
   const [userData, setUserData] = useState<UserData | null>(null);
 

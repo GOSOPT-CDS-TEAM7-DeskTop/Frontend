@@ -2,8 +2,11 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import PinDetail from "./pages/PinDetail";
 import Mypage from "./pages/Mypage";
+import userDataHooks from "./hooks/userDataHooks";
 
 const Router = () => {
+  userDataHooks();
+
   return (
     <>
       <BrowserRouter>
