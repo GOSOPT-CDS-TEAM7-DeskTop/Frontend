@@ -2,9 +2,10 @@ import { styled } from "styled-components";
 import MasonryLayout from "../components/layouts/MasonryLayout";
 import HeaderBar from "../components/layouts/HeaderBar";
 import articleHooks from "../hooks/articleHooks";
+import QuestionMark from "../components/common/QuestionMark";
 
 function Home() {
-  
+
   const { articleData, getAllArticle, searchArticle } = articleHooks();
 
   return (
@@ -13,6 +14,7 @@ function Home() {
       <MasonryWrapper>
         <MasonryLayout ishome={true} articleData={articleData} getAllArticle={getAllArticle} />
       </MasonryWrapper>
+      <QuestionMark />
     </>
   );
 }
