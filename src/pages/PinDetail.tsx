@@ -1,4 +1,9 @@
 import React from "react";
+import { useEffect, useState } from "react";
+import SaveBtn from "../components/PinDetail/SaveBtn";
+import FollowBtn from "../components/PinDetail/FollowBtn";
+import ReplyLayout from "../components/PinDetail/ReplyLayout";
+
 import styled from "styled-components";
 import HeaderBar from "../components/layouts/HeaderBar";
 import pinImg from "../assets/pinDetail/pinImg.png";
@@ -12,7 +17,19 @@ import dropdownImg from "../assets/pinDetail/icon_dropdown.svg";
 import myprofileImg from "../assets/pinDetail/icon_my_profile.svg";
 import emojiImg from "../assets/pinDetail/icon_emoji.svg";
 
-const PinDetail = () => {
+{
+  /* <SaveBtn isSaveBtnClicked={isSaveBtnClicked} setIsSaveBtnClicked={setIsSaveBtnClicked}>
+        {isSaveBtnClicked ? "저장됨" : "저장"}
+      </SaveBtn>
+      <FollowBtn isFollowBtnClicked={isFollowBtnClicked} setIsFollowBtnClicked={setIsFollowBtnClicked}>
+        {isFollowBtnClicked ? "팔로잉" : "팔로우"}
+      </FollowBtn>{" "} */
+}
+
+function PinDetail() {
+  const [isSaveBtnClicked, setIsSaveBtnClicked] = useState(false);
+  const [isFollowBtnClicked, setIsFollowBtnClicked] = useState(false);
+
   return (
     <>
       <HeaderBar />
@@ -44,7 +61,9 @@ const PinDetail = () => {
                 <span>프로필</span>
                 <img src={dropdownImg} alt="dropdownImg" />
               </DropDownButton>
-              <SaveButton>저장</SaveButton>
+              <SaveBtn isSaveBtnClicked={isSaveBtnClicked} setIsSaveBtnClicked={setIsSaveBtnClicked}>
+                {isSaveBtnClicked ? "저장됨" : "저장"}
+              </SaveBtn>
             </PinSaveBox>
             {/* 오른쪽 상단 팔로우 부분 */}
             <PinFollowBox>
@@ -55,7 +74,9 @@ const PinDetail = () => {
                   <small>팔로워 100000명</small>
                 </ProfileContent>
               </PinFollowProfile>
-              <FollowButton>팔로우</FollowButton>
+              <FollowBtn isFollowBtnClicked={isFollowBtnClicked} setIsFollowBtnClicked={setIsFollowBtnClicked}>
+                {isFollowBtnClicked ? "팔로잉" : "팔로우"}
+              </FollowBtn>
             </PinFollowBox>
           </PinContentContainer>
 
@@ -65,7 +86,9 @@ const PinDetail = () => {
               <p>댓글 n개</p>
               <img src={dropdownImg} alt="dropdownImg" />
             </PinReplNumBox>
-            <PinReplsBox></PinReplsBox>
+            <PinReplsBox>
+              <ReplyLayout></ReplyLayout>
+            </PinReplsBox>
             <PinReplInputBox>
               <PinReplMyProfile src={myprofileImg} alt="myprofileImg" />
               <ReplInput>
@@ -78,7 +101,7 @@ const PinDetail = () => {
       </PinDetailWrapper>
     </>
   );
-};
+}
 
 export default PinDetail;
 
@@ -196,33 +219,20 @@ const DropDownButton = styled.div`
   }
 `;
 
-// 추후 SaveButton 컴포넌트로 대체 예정
-const SaveButton = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 28px;
-  color: #000000;
-`;
-
 const PinFollowBox = styled.div`
   display: flex;
 
   width: 100%;
-
-  margin: 10rem 7rem 0rem 2.4rem;
+  padding-top: 10rem;
+  padding-left: 2.4rem;
+  /* margin: 10rem 7rem 0rem 2.4rem; */
 `;
 const PinFollowProfile = styled.div`
   display: flex;
   align-items: center;
 
   height: 7.2rem;
-  margin-right: 29.6rem;
+  margin-right: 30.2rem;
 `;
 const ProfileImage = styled.img`
   width: 7.2rem;
@@ -252,18 +262,6 @@ const ProfileContent = styled.article`
 
     color: #5f5f5f;
   }
-`;
-const FollowButton = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 28px;
-  color: #000000;
 `;
 
 /**
@@ -295,6 +293,8 @@ const PinReplNumBox = styled.div`
 const PinReplsBox = styled.div`
   width: 100%;
   height: 39rem;
+
+  padding: 4.6rem 2.8rem;
 `;
 
 // 댓글 입력 부분
