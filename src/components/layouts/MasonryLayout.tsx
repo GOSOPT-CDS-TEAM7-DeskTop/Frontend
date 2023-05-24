@@ -1,14 +1,47 @@
 import { MasonryInfiniteGrid } from "@egjs/react-infinitegrid";
-import IMAGE from "../../assets/images/images";
-import ArticleBrick from "../Home/ArticleBrick";
+import ArticleBrick from "../common/ArticleBrick";
+import { Link } from "react-router-dom";
 
-function MasonryLayout() {
+interface IMypageArticle {
+  id: number;
+  image: string;
+}
+
+interface IHomeArticle extends IMypageArticle {
+  altTxt: string;
+  content: string;
+  createdTime: string;
+  renderUrl: string;
+  title: string;
+  writerFollower: number;
+  writerImage: string;
+  writerNickname: string;
+}
+
+interface IMasonryInfiniteGridProps {
+  ishome: boolean;
+  articleData?: IHomeArticle[] | IMypageArticle[];
+  getAllArticle: () => void;
+}
+
+function MasonryLayout({ ishome, articleData, getAllArticle }: IMasonryInfiniteGridProps) {
   return (
     <>
-      <MasonryInfiniteGrid gap={5}>
-        {IMAGE.map((src) => (
-          <ArticleBrick imgSrc={src} />
-        ))}
+      <MasonryInfiniteGrid
+        gap={ishome ? 5 : 1.6}
+        onRequestAppend={() => {
+          getAllArticle();
+        }}>
+        {ishome
+          ? articleData?.map(({ id, image }) => (
+              <Link
+                to={{
+                  pathname: `/pin/${id}`,
+                }}>
+                <ArticleBrick key={id} imgSrc={image} ishome={ishome} />
+              </Link>
+            ))
+          : articleData?.map(({ id, image }) => <ArticleBrick key={id} imgSrc={image} ishome={ishome} />)}
       </MasonryInfiniteGrid>
     </>
   );

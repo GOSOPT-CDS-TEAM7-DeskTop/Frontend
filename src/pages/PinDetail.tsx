@@ -11,10 +11,9 @@ function PinDetail() {
       <SaveBtn isSaveBtnClicked={isSaveBtnClicked} setIsSaveBtnClicked={setIsSaveBtnClicked}>
         {isSaveBtnClicked ? "저장됨" : "저장"}
       </SaveBtn>
-
       <FollowBtn isFollowBtnClicked={isFollowBtnClicked} setIsFollowBtnClicked={setIsFollowBtnClicked}>
         {isFollowBtnClicked ? "팔로잉" : "팔로우"}
-      </FollowBtn>
+      </FollowBtn>{" "}
     </>
   );
 }
