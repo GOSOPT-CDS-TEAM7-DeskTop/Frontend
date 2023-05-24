@@ -12,7 +12,7 @@ const Router = () => {
           <Route path="/pin/:pinId" element={<PinDetail />} /> 보미 파이팅!
           {/* <Route path="/mypage/:userId" element={<Mypage />} /> 예현 파이팅!*/}
           {/* <Route path="/pin/:pinId" element={<PinDetail />} /> 보미 파이팅!*/}
-          <Route path="/mypage/:userId" element={<Mypage />} /> 
+          <Route path="/mypage/:userId" element={<Mypage />} />
           {/* <Route path="/pinupload" element={<Upload />} /> 재욱 파이팅!*/}
           {/* <Route path="*" element={<ErrorPage />} /> 찬우 파이팅!*/}
         </Routes>
