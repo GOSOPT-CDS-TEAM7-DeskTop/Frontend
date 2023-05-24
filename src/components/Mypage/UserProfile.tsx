@@ -1,36 +1,12 @@
 import { styled } from "styled-components";
 import axios from "axios";
 import { useState, useEffect } from "react";
-
-interface User {
-  code: number;
-  message: string;
-  data: UserData;
-}
-
-interface UserData {
-  userImage: string;
-  nickname: string;
-  account: string;
-  following: number;
-}
+import { useRecoilValue } from "recoil";
+import { userDataAtom } from "../../atoms/atom";
+import userDataHooks from "../../hooks/userDataHooks";
 
 function UserProfile() {
-  const [userData, setUserData] = useState<UserData | null>(null);
-
-  const getUserData = async () => {
-    try {
-      const res = await axios.get<User>("https://team7.collab-pinterest.p-e.kr/user");
-      console.log(res.data);
-      setUserData(res.data.data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  useEffect(() => {
-    getUserData();
-  }, []);
+  const userData = useRecoilValue(userDataAtom);
 
   return (
     <>
