@@ -32,14 +32,15 @@ function MasonryLayout({ ishome, articleData, getAllArticle }: IMasonryInfiniteG
         // onRequestAppend={() => {
         //   getAllArticle();
         // }}
-        >
+      >
         {ishome
           ? articleData?.map(({ id, image }) => (
               <Link
+                key={id}
                 to={{
                   pathname: `/pin/${id}`,
                 }}>
-                <ArticleBrick key={id} imgSrc={image} ishome={ishome} />
+                <ArticleBrick imgSrc={image} ishome={ishome} />
               </Link>
             ))
           : articleData?.map(({ id, image }) => <ArticleBrick key={id} imgSrc={image} ishome={ishome} />)}
