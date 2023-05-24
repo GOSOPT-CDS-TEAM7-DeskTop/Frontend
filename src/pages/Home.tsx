@@ -1,13 +1,30 @@
 import { styled } from "styled-components";
 import MasonryLayout from "../components/layouts/MasonryLayout";
 import HeaderBar from "../components/layouts/HeaderBar";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 function Home() {
+  const [articleData, setArticleData] = useState();
+
+  const getAllArticle = async () => {
+    try {
+      const res = await axios.get("https://team7.collab-pinterest.p-e.kr/pin");
+      setArticleData(res.data.data.pins);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    getAllArticle();
+  }, []);
+
   return (
     <>
       <HeaderBar />
       <MasonryWrapper>
-        <MasonryLayout />
+        <MasonryLayout ishome={true} articleData={articleData} getAllArticle={getAllArticle} />
       </MasonryWrapper>
     </>
   );
