@@ -99,11 +99,13 @@ function PinDetail() {
           {/* 오른쪽 하단 댓글 부분 */}
           <PinReplContainer>
             <PinReplNumBox>
-              <p>댓글 n개</p>
+              <p>댓글 {pinCommentData.length}개</p>
               <img src={dropdownImg} alt="dropdownImg" />
             </PinReplNumBox>
             <PinReplsBox>
-              <ReplyLayout></ReplyLayout>
+              {pinCommentData.map((commentData) => (
+                <ReplyLayout commentData={commentData}></ReplyLayout>
+              ))}
             </PinReplsBox>
             <PinReplInputBox>
               <PinReplMyProfile src={myprofileImg} alt="myprofileImg" />
