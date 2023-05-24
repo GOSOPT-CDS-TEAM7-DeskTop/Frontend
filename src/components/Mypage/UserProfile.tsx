@@ -7,7 +7,6 @@ import userDataHooks from "../../hooks/userDataHooks";
 
 function UserProfile() {
   const userData = useRecoilValue(userDataAtom);
-  console.log(userData);
 
   return (
     <>
