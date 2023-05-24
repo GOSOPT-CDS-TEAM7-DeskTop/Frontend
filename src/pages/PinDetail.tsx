@@ -1,5 +1,8 @@
 import React from "react";
+import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
+
 import SaveBtn from "../components/PinDetail/SaveBtn";
 import FollowBtn from "../components/PinDetail/FollowBtn";
 import ReplyLayout from "../components/PinDetail/ReplyLayout";
@@ -17,18 +20,31 @@ import dropdownImg from "../assets/pinDetail/icon_dropdown.svg";
 import myprofileImg from "../assets/pinDetail/icon_my_profile.svg";
 import emojiImg from "../assets/pinDetail/icon_emoji.svg";
 
-{
-  /* <SaveBtn isSaveBtnClicked={isSaveBtnClicked} setIsSaveBtnClicked={setIsSaveBtnClicked}>
-        {isSaveBtnClicked ? "저장됨" : "저장"}
-      </SaveBtn>
-      <FollowBtn isFollowBtnClicked={isFollowBtnClicked} setIsFollowBtnClicked={setIsFollowBtnClicked}>
-        {isFollowBtnClicked ? "팔로잉" : "팔로우"}
-      </FollowBtn>{" "} */
-}
-
 function PinDetail() {
+  let { pinId } = useParams();
+
   const [isSaveBtnClicked, setIsSaveBtnClicked] = useState(false);
   const [isFollowBtnClicked, setIsFollowBtnClicked] = useState(false);
+  const [pinDetailData, setPinDetailData] = useState([]);
+  const [pinCommentData, setPinCommentData] = useState([]);
+
+  const getPinDetail = async () => {
+    try {
+      const res = await axios.get(`https://team7.collab-pinterest.p-e.kr/pin/${pinId}`);
+      // console.log(res.data.data.pin);
+      // console.log(res.data.data.comment);
+
+      setPinDetailData(res.data.data.pin);
+      setPinCommentData(res.data.data.comment);
+    } catch (err) {
+      console.log("getPinDetail error: ", err);
+    }
+  };
+
+  useEffect(() => {
+    getPinDetail();
+    return () => {};
+  }, []);
 
   return (
     <>
@@ -44,7 +60,7 @@ function PinDetail() {
             </button>
             <button type="button">아이디어 더 보기</button>
           </PinImgBtns>
-          <PinImage src={pinImg} alt="pinImage" />
+          <PinImage src={pinDetailData.image} alt={pinDetailData.altTxt} />
         </PinImgSection>
 
         {/* 오른쪽 내용 부분 */}
@@ -68,10 +84,10 @@ function PinDetail() {
             {/* 오른쪽 상단 팔로우 부분 */}
             <PinFollowBox>
               <PinFollowProfile>
-                <ProfileImage src={profileImg} alt="profileImg"></ProfileImage>
+                <ProfileImage src={pinDetailData.writerImage} alt="profileImg"></ProfileImage>
                 <ProfileContent>
-                  <p>KJH</p>
-                  <small>팔로워 100000명</small>
+                  <p>{pinDetailData.writerNickname}</p>
+                  <small>팔로워 {pinDetailData.writerFollower}명</small>
                 </ProfileContent>
               </PinFollowProfile>
               <FollowBtn isFollowBtnClicked={isFollowBtnClicked} setIsFollowBtnClicked={setIsFollowBtnClicked}>
@@ -231,14 +247,15 @@ const PinFollowProfile = styled.div`
   display: flex;
   align-items: center;
 
+  width: 75%;
   height: 7.2rem;
-  margin-right: 30.2rem;
 `;
 const ProfileImage = styled.img`
   width: 7.2rem;
   height: 100%;
 
   margin-right: 1.8rem;
+  border-radius: 5rem;
 `;
 const ProfileContent = styled.article`
   display: flex;

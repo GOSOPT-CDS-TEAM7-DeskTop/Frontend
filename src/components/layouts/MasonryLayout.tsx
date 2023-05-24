@@ -32,7 +32,7 @@ function MasonryLayout({ ishome, articleData, getAllArticle }: IMasonryInfiniteG
         // onRequestAppend={() => {
         //   getAllArticle();
         // }}
-        >
+      >
         {ishome
           ? articleData?.map(({ id, image }) => (
               <Link
