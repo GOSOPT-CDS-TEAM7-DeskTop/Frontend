@@ -5,7 +5,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 interface ITitle {
-  title: string;
+  title?: string;
 }
 
 function Home() {
@@ -21,7 +21,7 @@ function Home() {
   };
   const searchArticle = async (title: ITitle) => {
     try {
-      const res = await axios.get(`https://team7.collab-pinterest.p-e.k/pin/?title=${title}`);
+      const res = await axios.get(`https://team7.collab-pinterest.p-e.kr/pin/?title=${title}`);
       setArticleData(res.data.data.pins);
     } catch (err) {
       console.log(err);
@@ -30,6 +30,7 @@ function Home() {
 
   useEffect(() => {
     getAllArticle();
+    return ()=>{}
   }, []);
 
   return (
