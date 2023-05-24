@@ -22,15 +22,32 @@ function PinDetail() {
   let { pinId } = useParams();
 
   const [isSaveBtnClicked, setIsSaveBtnClicked] = useState(false);
+  const [responseSaveData, setResponseSaveData] = useState(-1);
   const [isFollowBtnClicked, setIsFollowBtnClicked] = useState(false);
   const [pinDetailData, setPinDetailData] = useState([]);
   const [pinCommentData, setPinCommentData] = useState([]);
 
+  // 게시글 정보를 GET
   const getPinDetail = async () => {
     try {
       const res = await axios.get(`https://team7.collab-pinterest.p-e.kr/pin/${pinId}`);
       setPinDetailData(res.data.data.pin);
       setPinCommentData(res.data.data.comment);
+    } catch (err) {
+      console.log("getPinDetail error: ", err);
+    }
+  };
+
+  const clickSaveBtn = () => {
+    console.log("눌림");
+    postSave();
+  };
+
+  // 저장 여부를 POST / GET
+  const postSave = async () => {
+    try {
+      const res = await axios.post(`https://team7.collab-pinterest.p-e.kr/pin/save`, { pinId });
+      console.log(res);
     } catch (err) {
       console.log("getPinDetail error: ", err);
     }
@@ -72,7 +89,10 @@ function PinDetail() {
                 <span>프로필</span>
                 <img src={dropdownImg} alt="dropdownImg" />
               </DropDownButton>
-              <SaveBtn isSaveBtnClicked={isSaveBtnClicked} setIsSaveBtnClicked={setIsSaveBtnClicked}>
+              <SaveBtn
+                isSaveBtnClicked={isSaveBtnClicked}
+                setIsSaveBtnClicked={setIsSaveBtnClicked}
+                clickSaveBtn={clickSaveBtn}>
                 {isSaveBtnClicked ? "저장됨" : "저장"}
               </SaveBtn>
             </PinSaveBox>

@@ -5,13 +5,15 @@ interface ISaveBtnProps {
   children: React.ReactNode;
   setIsSaveBtnClicked: Function;
   isSaveBtnClicked: boolean;
+  clickSaveBtn: Function;
 }
 
 function SaveBtn(props: ISaveBtnProps) {
-  const { children, isSaveBtnClicked, setIsSaveBtnClicked } = props;
+  const { children, isSaveBtnClicked, setIsSaveBtnClicked, clickSaveBtn } = props;
 
   const toggleSaveBtn = () => {
     setIsSaveBtnClicked((isSaveBtnClicked: any) => !isSaveBtnClicked);
+    clickSaveBtn();
   };
   return (
     <>
