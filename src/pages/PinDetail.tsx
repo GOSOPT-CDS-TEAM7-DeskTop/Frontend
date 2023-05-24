@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ChangeEvent } from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation, useParams } from "react-router-dom";
@@ -26,6 +26,26 @@ function PinDetail() {
   const [isFollowBtnClicked, setIsFollowBtnClicked] = useState(false);
   const [pinDetailData, setPinDetailData] = useState([]);
   const [pinCommentData, setPinCommentData] = useState([]);
+  const [content, setContent] = useState("");
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const userValue = e.target.value;
+    setContent(userValue);
+  };
+
+  const handleSubmit = (event: React.ChangeEvent<HTMLInputElement>) => {
+    event.preventDefault();
+    postComment();
+  };
+
+  const postComment = async () => {
+    try {
+      const res = await axios.post(`https://team7.collab-pinterest.p-e.kr/comment/${pinId}`, { content });
+      getPinDetail();
+    } catch (err) {
+      console.log("postComment error:", err);
+    }
+  };
 
   // 게시글 정보를 GET
   const getPinDetail = async () => {
@@ -125,8 +145,8 @@ function PinDetail() {
             <PinReplInputBox>
               <PinReplMyProfile src={myprofileImg} alt="myprofileImg" />
               <ReplInput>
-                <Input type="text" placeholder="댓글 추가"></Input>
-                <EmojiImg src={emojiImg} alt="emojiImg" />
+                <Input type="text" placeholder="댓글 추가" onChange={handleInputChange} />
+                <EmojiImg src={emojiImg} alt="emojiImg" type="submit" onClick={handleSubmit} />
               </ReplInput>
             </PinReplInputBox>
           </PinReplContainer>
@@ -376,4 +396,5 @@ const EmojiImg = styled.img`
   height: 3.2rem;
 
   margin: 1.6rem 2.3rem 1.6rem 44.5rem;
+  cursor: pointer;
 `;
