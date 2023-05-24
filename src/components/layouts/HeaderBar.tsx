@@ -7,6 +7,7 @@ import iconMessage from "../../assets/icon/icon _message.svg";
 import userProfile from "../../assets/icon/user_Profile.svg";
 import btnArrowDown from "../../assets/icon/btn_arrow_down.svg";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 interface ITitle {
   title?: string;
@@ -24,7 +25,6 @@ function HeaderBar({ searchArticle }: ISearchArticle) {
   const searchArticleFn = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       const title = inputRef.current?.value;
-      console.log(title);
       searchArticle(title as ITitle);
     }
     return;
@@ -33,11 +33,15 @@ function HeaderBar({ searchArticle }: ISearchArticle) {
     <>
       <HeaderBarWrapper>
         <NavSection>
-          <img src={pinterestLogo} alt="pinterestLogo" />
-          <button type="button">
-            만들기
-            <img src={BtnDropDown} alt="dropDownBtn" />
-          </button>
+          <Link to={{ pathname: "/home" }}>
+            <img src={pinterestLogo} alt="pinterestLogo" />
+          </Link>
+          <Link to={{ pathname: "/pinupload" }} style={{ textDecoration: "none", textDecorationLine: "none" }}>
+            <button type="button">
+              만들기
+              <img src={BtnDropDown} alt="dropDownBtn" />
+            </button>
+          </Link>
         </NavSection>
         <SearchSection>
           <input type="text" placeholder="핀 검색" ref={inputRef} onKeyDown={searchArticleFn} />

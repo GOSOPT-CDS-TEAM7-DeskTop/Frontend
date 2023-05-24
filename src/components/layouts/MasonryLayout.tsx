@@ -39,10 +39,11 @@ function MasonryLayout({ ishome, articleData, getAllArticle }: IMasonryInfiniteG
         {ishome
           ? articleData?.map(({ id, image }) => (
               <Link
+                key={id}
                 to={{
                   pathname: `/pin/${id}`,
                 }}>
-                <ArticleBrick key={id} imgSrc={image} ishome={ishome} />
+                <ArticleBrick imgSrc={image} ishome={ishome} />
               </Link>
             ))
           : articleData?.map(({ pinId, pinImage }) => <ArticleBrick key={pinId} imgSrc={pinImage} ishome={ishome} />)}
