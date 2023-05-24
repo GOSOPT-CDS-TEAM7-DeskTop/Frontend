@@ -25,7 +25,6 @@ function HeaderBar({ searchArticle }: ISearchArticle) {
   const searchArticleFn = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       const title = inputRef.current?.value;
-      console.log(title);
       searchArticle(title as ITitle);
     }
     return;
