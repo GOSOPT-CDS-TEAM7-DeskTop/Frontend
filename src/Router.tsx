@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import PinDetail from "./pages/PinDetail";
 import Mypage from "./pages/Mypage";
 import userDataHooks from "./hooks/userDataHooks";
+import PinUpload from "./pages/PinUpload";
 
 const Router = () => {
   userDataHooks();
@@ -16,7 +17,7 @@ const Router = () => {
           {/* <Route path="/mypage/:userId" element={<Mypage />} /> 예현 파이팅!*/}
           {/* <Route path="/pin/:pinId" element={<PinDetail />} /> 보미 파이팅!*/}
           <Route path="/mypage/:userId" element={<Mypage />} />
-          {/* <Route path="/pinupload" element={<Upload />} /> 재욱 파이팅!*/}
+          <Route path="/pinupload" element={<PinUpload />} /> 재욱 파이팅!
           {/* <Route path="*" element={<ErrorPage />} /> 찬우 파이팅!*/}
         </Routes>
       </BrowserRouter>
