@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@egjs/react-infinitegrid": "^4.9.0",
+    "@types/recoil": "^0.0.9",
     "@types/styled-components": "^5.1.26",
     "axios": "^1.4.0",
     "install": "^0.13.0",
