@@ -4,10 +4,11 @@ import BtnDropDown from "../../assets/icon/btn_down.svg";
 import readingGlasses from "../../assets/icon/readingGlasses.svg";
 import iconAlarm from "../../assets/icon/icon_alarm.svg";
 import iconMessage from "../../assets/icon/icon _message.svg";
-import userProfile from "../../assets/icon/user_Profile.svg";
 import btnArrowDown from "../../assets/icon/btn_arrow_down.svg";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+import { userDataAtom } from "../../atoms/atom";
 
 interface ITitle {
   title?: string;
@@ -18,6 +19,11 @@ interface ISearchArticle {
 }
 
 function HeaderBar({ searchArticle }: ISearchArticle) {
+
+  /** userData HeaderBar Connect */
+  const userData = useRecoilValue(userDataAtom);
+
+
   /** 검색창 useRef */
   const inputRef = useRef<HTMLInputElement | null>(null);
 
@@ -51,7 +57,7 @@ function HeaderBar({ searchArticle }: ISearchArticle) {
           <img src={iconAlarm} alt="iconAlarm" />
           <img src={iconMessage} alt="btnMessage" />
           <ProfileImg>
-            <img src={userProfile} alt="btnProfile" />
+            <img src={userData?.userImage} alt="btnProfile" />
           </ProfileImg>
           <img src={btnArrowDown} alt="btnArrowDown" />
         </ManageSection>
