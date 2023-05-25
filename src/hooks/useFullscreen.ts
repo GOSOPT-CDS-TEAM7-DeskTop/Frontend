@@ -1,13 +1,13 @@
-import { useRef } from "react";
-const useFullscreen = () => {
-  const element = useRef();
-  const triggerFull = () => {
-    console.log(element.current);
+// import { useRef } from "react";
+// const useFullscreen = () => {
+//   const element = useRef();
+//   const triggerFull = () => {
+//     console.log(element.current);
 
-    element.current.requestFullscreen();
-  };
+//     element.current.requestFullscreen();
+//   };
 
-  return { element, triggerFull };
-};
+//   return { element, triggerFull };
+// };
 
-export default useFullscreen;
+// export default useFullscreen;

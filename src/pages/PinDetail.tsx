@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 
-import useFullscreen from "../hooks/useFullscreen";
+// import useFullscreen from "../hooks/useFullscreen";
 import SaveBtn from "../components/PinDetail/SaveBtn";
 import FollowBtn from "../components/PinDetail/FollowBtn";
 import ReplyLayout from "../components/PinDetail/ReplyLayout";
@@ -60,7 +60,7 @@ function PinDetail() {
     }
   };
   const clickSaveBtn = () => {
-    console.log("눌림");
+    // console.log("눌림");
     postSave();
   };
 
