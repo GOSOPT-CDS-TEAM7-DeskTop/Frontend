@@ -100,6 +100,10 @@ const PinUploadTextarea = styled.textarea`
 
   resize: none;
   outline: none;
+
+  &:focus {
+    border-bottom: 0.2rem solid ${({ theme }) => theme.colors.pinterest_blue};
+  }
 `;
 const PinUploadTextareaTextBlock = styled.div`
   display: flex;
