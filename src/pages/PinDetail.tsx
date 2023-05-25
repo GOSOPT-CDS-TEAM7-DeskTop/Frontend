@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate, useLocation, useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 import SaveBtn from "../components/PinDetail/SaveBtn";
 import FollowBtn from "../components/PinDetail/FollowBtn";
@@ -28,16 +28,15 @@ function PinDetail() {
   const [pinCommentData, setPinCommentData] = useState([]);
   const [content, setContent] = useState("");
 
+  // 댓글을 받아와 post 하는 부분
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const userValue = e.target.value;
     setContent(userValue);
   };
-
   const handleSubmit = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
     postComment();
   };
-
   const postComment = async () => {
     try {
       const res = await axios.post(`https://team7.collab-pinterest.p-e.kr/comment/${pinId}`, { content });
@@ -57,7 +56,6 @@ function PinDetail() {
       console.log("getPinDetail error: ", err);
     }
   };
-
   const clickSaveBtn = () => {
     console.log("눌림");
     postSave();
@@ -72,7 +70,6 @@ function PinDetail() {
       console.log("getPinDetail error: ", err);
     }
   };
-
   useEffect(() => {
     getPinDetail();
     return () => {};
@@ -84,7 +81,12 @@ function PinDetail() {
       <PinDetailWrapper>
         {/* 왼쪽 이미지 부분 */}
         <PinImgSection>
-          <BackSpan src={backSpanImg} alt="backSpan" />
+          <Link
+            to={{
+              pathname: `/home`,
+            }}>
+            <BackSpan src={backSpanImg} alt="backSpan" />
+          </Link>
           <PinImgBtns>
             <button type="button">
               <img src={viewImg} alt="viewImg" />
