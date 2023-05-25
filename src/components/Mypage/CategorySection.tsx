@@ -1,6 +1,8 @@
 import { styled } from "styled-components";
 import CardContainer from "./CardContainer";
 import CardData from "./CardData";
+import filter_icon from "../../assets/icon/filter_icon.svg";
+import plus_icon from "../../assets/icon/plus_icon.svg";
 
 const CategorySection = () => {
   return (
@@ -10,8 +12,8 @@ const CategorySection = () => {
         <Stored>저장됨</Stored>
       </CreatedStoredWrapper>
       <FilterSection>
-        <img src="../../src/assets/icon/filter_icon.svg" alt="filter_icon" />
-        <img src="../../src/assets/icon/plus_icon.svg" alt="plus_icon" />
+        <img src={filter_icon} alt="filter_icon" />
+        <img src={plus_icon} alt="plus_icon" />
       </FilterSection>
       <CardSection>
         {CardData.map((data, index) => {
