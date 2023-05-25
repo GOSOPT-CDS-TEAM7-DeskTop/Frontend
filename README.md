@@ -16,12 +16,7 @@
 <h3> 2️⃣ 로고 , 만들기 , 프로필 이미지 클릭시 각 페이지로 이동 </h3>
 
 <h3> 3️⃣ 핀게시물 상세보기 </h3>
-<img width="131" alt="image" src="https://github.com/SOPKATHON-2/FrontEnd/assets/91375979/0bd6296e-5069-4a43-a930-df57980a66e2">
-<img width="146" alt="image" src="https://github.com/SOPKATHON-2/FrontEnd/assets/91375979/0396f0ca-56f7-4310-985b-7f4f4b1c9b85">
-<img width="147" alt="image" src="https://github.com/SOPKATHON-2/FrontEnd/assets/91375979/d9016d31-6bce-4ec9-bc19-7d6e4945ac79">
-<img width="151" alt="image" src="https://github.com/SOPKATHON-2/FrontEnd/assets/91375979/f9b87424-b910-40f1-9f88-13c077b8b03b">
 
-<div ><strong> 고민갯수 , 공유하기기능  </strong> 해당방의 고민갯수 get api , 공유하기 기능  <br/></div>
 
 
 <h2> 🐵 웨비들 역할분담 </h2>
