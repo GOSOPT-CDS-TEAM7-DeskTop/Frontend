@@ -15,8 +15,8 @@
 
     /* Linting */
     "strict": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": true,
+    "noUnusedLocals": false, // 사용되지 않는 무언가가 import 되더라도 컴파일 에러를 뱉지 않음
+    "noUnusedParameters": false, // 매게변수가 사용되지 않더라도 컴파일 에러를 뱉지 않음
     "noFallthroughCasesInSwitch": true
   },
   "include": ["src"],

@@ -36,7 +36,7 @@ function MasonryLayout({ ishome, articleData, getAllArticle }: IMasonryInfiniteG
         // }}
       >
         {ishome
-          ? articleData?.map(({ id, image }) => (
+          ? articleData?.map(({ id, image }: any) => (
               <Link
                 key={id}
                 to={{
@@ -45,7 +45,9 @@ function MasonryLayout({ ishome, articleData, getAllArticle }: IMasonryInfiniteG
                 <ArticleBrick imgSrc={image} ishome={ishome} />
               </Link>
             ))
-          : articleData?.map(({ pinId, pinImage }) => <ArticleBrick key={pinId} imgSrc={pinImage} ishome={ishome} />)}
+          : articleData?.map(({ pinId, pinImage }: any) => (
+              <ArticleBrick key={pinId} imgSrc={pinImage} ishome={ishome} />
+            ))}
       </MasonryInfiniteGrid>
     </>
   );
