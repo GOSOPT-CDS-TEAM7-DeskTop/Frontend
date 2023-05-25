@@ -33,7 +33,7 @@ function PinDetail() {
     setContent(userValue);
   };
 
-  const handleSubmit = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSubmit = (event: React.MouseEvent<HTMLImageElement>) => {
     event.preventDefault();
     postComment();
   };
@@ -146,7 +146,7 @@ function PinDetail() {
               <PinReplMyProfile src={myprofileImg} alt="myprofileImg" />
               <ReplInput>
                 <Input type="text" placeholder="댓글 추가" onChange={handleInputChange} />
-                <EmojiImg src={emojiImg} alt="emojiImg" type="submit" onClick={handleSubmit} />
+                <EmojiImg src={emojiImg} alt="emojiImg" onClick={handleSubmit} />
               </ReplInput>
             </PinReplInputBox>
           </PinReplContainer>
