@@ -38,13 +38,20 @@ const SaveArticleSection = () => {
 export default SaveArticleSection;
 
 const SaveArticleSectionWrapper = styled.section`
-  margin: 0 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 180rem;
+  width: 100%;
 
   span {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
+    width: 180rem;
     height: 3.6rem;
 
     margin-bottom: 2.6rem;
@@ -69,6 +76,6 @@ const SaveArticleSectionWrapper = styled.section`
 `;
 
 const MasonryWrapper = styled.section`
-  width: 100%;
+  width: 180rem;
   padding: 0;
 `;

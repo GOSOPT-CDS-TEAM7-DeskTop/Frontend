@@ -1,9 +1,7 @@
 import { styled } from "styled-components";
-import axios from "axios";
-import { useState, useEffect } from "react";
 import { useRecoilValue } from "recoil";
 import { userDataAtom } from "../../atoms/atom";
-import userDataHooks from "../../hooks/userDataHooks";
+
 
 function UserProfile() {
   const userData = useRecoilValue(userDataAtom);
@@ -78,6 +76,8 @@ const FollowNum = styled.h3`
 const ButtonSection = styled.div`
   display: flex;
   gap: 0.7rem;
+
+  margin-bottom: 0.5rem;
 `;
 
 const ShareButton = styled.button`
