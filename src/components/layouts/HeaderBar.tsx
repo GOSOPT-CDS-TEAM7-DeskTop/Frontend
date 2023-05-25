@@ -19,10 +19,8 @@ interface ISearchArticle {
 }
 
 function HeaderBar({ searchArticle }: ISearchArticle) {
-
   /** userData HeaderBar Connect */
   const userData = useRecoilValue(userDataAtom);
-
 
   /** 검색창 useRef */
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -57,7 +55,9 @@ function HeaderBar({ searchArticle }: ISearchArticle) {
           <img src={iconAlarm} alt="iconAlarm" />
           <img src={iconMessage} alt="btnMessage" />
           <ProfileImg>
-            <img src={userData?.userImage} alt="btnProfile" />
+            <Link to={{ pathname: "/mypage/1" }}>
+              <img src={userData?.userImage} alt="btnProfile" />
+            </Link>
           </ProfileImg>
           <img src={btnArrowDown} alt="btnArrowDown" />
         </ManageSection>
