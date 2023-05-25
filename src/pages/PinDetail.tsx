@@ -1,8 +1,9 @@
 import React, { ChangeEvent } from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate, useLocation, useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
+// import useFullscreen from "../hooks/useFullscreen";
 import SaveBtn from "../components/PinDetail/SaveBtn";
 import FollowBtn from "../components/PinDetail/FollowBtn";
 import ReplyLayout from "../components/PinDetail/ReplyLayout";
@@ -28,6 +29,8 @@ function PinDetail() {
   const [pinCommentData, setPinCommentData] = useState([]);
   const [content, setContent] = useState("");
 
+  // const { element, triggerFull } = useFullscreen();
+  // 댓글을 받아와 post 하는 부분
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const userValue = e.target.value;
     setContent(userValue);
@@ -37,7 +40,6 @@ function PinDetail() {
     event.preventDefault();
     postComment();
   };
-
   const postComment = async () => {
     try {
       const res = await axios.post(`https://team7.collab-pinterest.p-e.kr/comment/${pinId}`, { content });
@@ -57,9 +59,8 @@ function PinDetail() {
       console.log("getPinDetail error: ", err);
     }
   };
-
   const clickSaveBtn = () => {
-    console.log("눌림");
+    // console.log("눌림");
     postSave();
   };
 
@@ -72,7 +73,6 @@ function PinDetail() {
       console.log("getPinDetail error: ", err);
     }
   };
-
   useEffect(() => {
     getPinDetail();
     return () => {};
@@ -84,14 +84,20 @@ function PinDetail() {
       <PinDetailWrapper>
         {/* 왼쪽 이미지 부분 */}
         <PinImgSection>
-          <BackSpan src={backSpanImg} alt="backSpan" />
+          <Link
+            to={{
+              pathname: `/home`,
+            }}>
+            <BackSpan src={backSpanImg} alt="backSpan" />
+          </Link>
           <PinImgBtns>
-            <button type="button">
+            <button type="button" onClick={() => window.open(`${pinDetailData.image}`, "_blank")}>
               <img src={viewImg} alt="viewImg" />
               이미지 보기
             </button>
             <button type="button">아이디어 더 보기</button>
           </PinImgBtns>
+
           <PinImage src={pinDetailData.image} alt={pinDetailData.altTxt} />
         </PinImgSection>
 
