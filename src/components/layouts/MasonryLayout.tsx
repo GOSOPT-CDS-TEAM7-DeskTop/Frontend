@@ -27,7 +27,6 @@ interface IMasonryInfiniteGridProps {
 }
 
 function MasonryLayout({ ishome, articleData, getAllArticle }: IMasonryInfiniteGridProps) {
-  console.log(articleData);
   return (
     <>
       <MasonryInfiniteGrid
