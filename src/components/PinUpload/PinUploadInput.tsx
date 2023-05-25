@@ -3,9 +3,17 @@ import styled, { css } from "styled-components";
 import { userDataAtom } from "../../atoms/atom";
 import { useState } from "react";
 
-function PinUploadInput() {
+interface PinUploadInputProps {
+  handleChangeInput: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  title: string;
+  content: string;
+}
+
+function PinUploadInput(props: PinUploadInputProps) {
   const [count, setCount] = useState(0);
   const { userImage, nickname } = useRecoilValue(userDataAtom);
+
+  const { handleChangeInput, title, content } = props;
 
   const handleTextareaCount = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setCount(e.target.value.replace(/[\0-\x7f]|([0-\u07ff]|(.))/g, "$&$1$2").length);
@@ -13,8 +21,21 @@ function PinUploadInput() {
 
   return (
     <PinUploadInputWrapper>
-      <PinUploadInputBox type="text" placeholder="제목추가" header="true" />
-      <PinUploadInputBox type="text" placeholder="사람들에게 회원님의 핀에 대해 설명해 보세요 😀" />
+      <PinUploadInputBox
+        type="text"
+        name="title"
+        value={title}
+        placeholder="제목추가"
+        header="true"
+        onChange={handleChangeInput}
+      />
+      <PinUploadInputBox
+        type="text"
+        name="content"
+        value={content}
+        onChange={handleChangeInput}
+        placeholder="사람들에게 회원님의 핀에 대해 설명해 보세요 😀"
+      />
       <PinUploadUserBlock>
         <PinUploadUserImg src={userImage} alt="userImage" />
         <PinUploadUserText>{nickname}</PinUploadUserText>

@@ -3,8 +3,41 @@ import IcMore from "../../assets/icon/icon_more.svg";
 import IcDropDown from "../../assets/icon/icon_dropdown.svg";
 import PinUploadSection from "./PinUploadSection";
 import PinUploadWebsite from "./PinUploadWebsite";
+import axios from "axios";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function PinUploadBox() {
+  const [inputs, setInputs] = useState({
+    title: "",
+    content: "",
+  });
+  const navigate = useNavigate();
+
+  const { title, content } = inputs;
+
+  const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setInputs({
+      ...inputs,
+      [name]: value,
+    });
+  };
+
+  const postCreatePin = async () => {
+    try {
+      const response = await axios.post("https://team7.collab-pinterest.p-e.kr/pin", {
+        title,
+        content,
+      });
+      if (response.data.code === 201) {
+        navigate("/home");
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
     <PinUploadBoxWrapper>
       <PinUploadHeader>
@@ -14,10 +47,12 @@ function PinUploadBox() {
             <PinUploadCategoryText>해커톤</PinUploadCategoryText>
             <img src={IcDropDown} alt="dropdown" />
           </PinUploadCategory>
-          <PinUploadCategoryBtn type="button">저장</PinUploadCategoryBtn>
+          <PinUploadCategoryBtn type="button" onClick={postCreatePin}>
+            저장
+          </PinUploadCategoryBtn>
         </PinUploadCategoryBox>
       </PinUploadHeader>
-      <PinUploadSection />
+      <PinUploadSection handleChangeInput={handleChangeInput} title={title} content={content} />
       <PinUploadWebsite />
     </PinUploadBoxWrapper>
   );

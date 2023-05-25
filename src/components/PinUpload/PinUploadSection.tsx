@@ -3,12 +3,18 @@ import PinUploadImg from "./PinUploadImg";
 import PinUploadInput from "./PinUploadInput";
 import PinUploadWebsite from "./PinUploadWebsite";
 
-function PinUploadSection() {
+interface PinUploadSectionProps {
+  handleChangeInput: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  title: string;
+  content: string;
+}
+function PinUploadSection(props: PinUploadSectionProps) {
+  const { handleChangeInput, title, content } = props;
   return (
     <>
       <PinUploadSectionWrapper>
         <PinUploadImg />
-        <PinUploadInput />
+        <PinUploadInput handleChangeInput={handleChangeInput} title={title} content={content} />
       </PinUploadSectionWrapper>
     </>
   );
