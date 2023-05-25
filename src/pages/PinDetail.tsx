@@ -24,7 +24,7 @@ function PinDetail() {
   const [isSaveBtnClicked, setIsSaveBtnClicked] = useState(false);
   const [responseSaveData, setResponseSaveData] = useState(-1);
   const [isFollowBtnClicked, setIsFollowBtnClicked] = useState(false);
-  const [pinDetailData, setPinDetailData] = useState([]);
+  const [pinDetailData, setPinDetailData] = useState<any>([]);
   const [pinCommentData, setPinCommentData] = useState([]);
   const [content, setContent] = useState("");
 
