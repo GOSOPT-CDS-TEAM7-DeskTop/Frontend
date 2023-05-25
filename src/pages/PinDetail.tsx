@@ -98,12 +98,7 @@ function PinDetail() {
             <button type="button">아이디어 더 보기</button>
           </PinImgBtns>
 
-          <PinImage
-            src={pinDetailData.image}
-            alt={pinDetailData.altTxt}
-            // style={{ width: "300px" }}
-            alt="img"
-          />
+          <PinImage src={pinDetailData.image} alt={pinDetailData.altTxt} />
         </PinImgSection>
 
         {/* 오른쪽 내용 부분 */}
