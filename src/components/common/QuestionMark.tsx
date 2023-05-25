@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import questionMark from "../../assets/icon/questionmark.svg";
 
 const QuestionMark = () => {
   return (
     <QuestionMarkWrapper>
       <button type="button">
-        <img src="../../src/assets/icon/questionmark.svg" alt="questionmark_icon" />
+        <img src={questionMark} alt="questionmark_icon" />
       </button>
     </QuestionMarkWrapper>
   );
@@ -27,5 +28,4 @@ const QuestionMarkWrapper = styled.div`
     background-color: ${({ theme }) => theme.colors.pinterest_white};
     box-shadow: 0 0 1.1rem rgba(0, 0, 0, 0.15);
   }
-
 `;
