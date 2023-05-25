@@ -3,7 +3,8 @@ import styled from "styled-components";
 import heartIcon from "../../assets/icon/icon_heart.png";
 import getTimeDifference from "../../utils/getTimeDifference";
 
-function ReplyLayout({ commentData }) {
+/** 보미야 여기 나중에 any -> interface 지정해주자! */
+function ReplyLayout({ commentData } : any) {
   return (
     <>
       <ReplyWrapper>
