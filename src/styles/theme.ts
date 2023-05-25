@@ -4,9 +4,11 @@ const colors = {
   pinterest_black: "#000000",
   pinterest_red: "#E60022",
   pinterest_deepgray: "#5F5F5F",
+  pinterest_blue: "#4E4AFE",
   pinterest_gray: "#EFEFEF",
   pinterest_lightgray: "#EDEDED",
   pinterest_white: "#FFFFFF",
+  pinterest_background: "#F5F5F5",
 };
 
 const fonts = {
@@ -28,19 +30,18 @@ const fonts = {
     font-weight: 500;
     font-style: normal;
   `,
-   pinterest_header3: css`
-   font-family: Roboto;
-   font-size: 1.5rem;
-   font-weight: 500;
-   font-style: normal;
- `,
+  pinterest_header3: css`
+    font-family: Roboto;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-style: normal;
+  `,
   pinterest_header4: css`
-  font-family: Roboto;
-  font-size: 1.2rem;
-  font-weight: 500;
-  font-style: normal;
-`,
-
+    font-family: Roboto;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-style: normal;
+  `,
 };
 
 const theme: DefaultTheme = {

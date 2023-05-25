@@ -7,8 +7,10 @@ declare module "styled-components" {
       pinterest_red: string;
       pinterest_deepgray: string;
       pinterest_gray: string;
+      pinterest_blue: string;
       pinterest_lightgray: string;
       pinterest_white: string;
+      pinterest_background: string;
     };
     fonts: {
       pinterest_title: SerializedStyles;
