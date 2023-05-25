@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 
+import useFullscreen from "../hooks/useFullscreen";
 import SaveBtn from "../components/PinDetail/SaveBtn";
 import FollowBtn from "../components/PinDetail/FollowBtn";
 import ReplyLayout from "../components/PinDetail/ReplyLayout";
@@ -28,6 +29,7 @@ function PinDetail() {
   const [pinCommentData, setPinCommentData] = useState([]);
   const [content, setContent] = useState("");
 
+  const { element, triggerFull } = useFullscreen();
   // 댓글을 받아와 post 하는 부분
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const userValue = e.target.value;
@@ -88,13 +90,21 @@ function PinDetail() {
             <BackSpan src={backSpanImg} alt="backSpan" />
           </Link>
           <PinImgBtns>
-            <button type="button">
+            <button type="button" onClick={triggerFull}>
               <img src={viewImg} alt="viewImg" />
               이미지 보기
             </button>
             <button type="button">아이디어 더 보기</button>
           </PinImgBtns>
-          <PinImage src={pinDetailData.image} alt={pinDetailData.altTxt} />
+          <div ref={element}>
+            <PinImage
+              ref={element}
+              src={pinDetailData.image}
+              alt={pinDetailData.altTxt}
+              // style={{ width: "300px" }}
+              alt="img"
+            />
+          </div>
         </PinImgSection>
 
         {/* 오른쪽 내용 부분 */}
