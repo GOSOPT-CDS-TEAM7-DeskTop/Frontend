@@ -22,10 +22,12 @@
 <h3> 2️⃣ 핀게시물 상세보기 </h3>
 <img width="737" alt="image" src="https://github.com/GOSOPT-CDS-TEAM7-DeskTop/Frontend/assets/91375979/55553c46-6628-4d32-ba08-975d1bba20f7">
 <br />
-<br />    
+<br />
+- 핀게시물 상세정보 가져오기 api  <br />
 - 팔로우 , 저장 버튼 api 기능 <br />
 - 이미지 클릭시 새창 띄우기 <br />
-- 뒤로가기 버튼 클릭시 home 으로 이동 <br />    
+- 뒤로가기 버튼 클릭시 home 으로 이동 <br /> 
+- 댓글작성 및 생성 api <br />    
 
 <h3> 3️⃣ 마이페이지 </h3>
 <br />
@@ -95,10 +97,10 @@
             저장, 팔로우 API <br/> 댓글생성 API 
       </td>
        <td>
-            유저프로필API & Recoil저장 <br/> 저장된핀게시물API
+            유저프로필API & Recoil <br/> 저장된핀게시물API
       </td>
        <td>
-            핀이미지 전송API <br/>
+            핀생성 API <br/>
       </td>
     </tr>
       	<tr align="center">
