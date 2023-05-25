@@ -38,6 +38,8 @@
 - 저장한 게시물 불러오기 <br />    
 
 <h3> 4️⃣ 핀생성페이지 </h3>
+<img width="750" alt="image" src="https://github.com/GOSOPT-CDS-TEAM7-DeskTop/Frontend/assets/91375979/3c400f9d-e836-48fa-8671-9fc2c4bcbda7">
+
 <br />
 <br /> 
 - 이미지 업로드 후 미리보기 <br />    
