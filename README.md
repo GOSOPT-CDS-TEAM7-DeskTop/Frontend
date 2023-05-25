@@ -13,14 +13,14 @@
 <h2> 🎨 Pinterest Clone 기능 </h2>
 
 <h3> 1️⃣ 홈화면  </h3>
-<img width="747" alt="image" src="https://github.com/GOSOPT-CDS-TEAM7-DeskTop/Frontend/assets/91375979/cb891606-843b-4ec1-bc59-2c2061374818">
+<img width="750" alt="image" src="https://github.com/GOSOPT-CDS-TEAM7-DeskTop/Frontend/assets/91375979/cb891606-843b-4ec1-bc59-2c2061374818">
 <br />
 <br />    
 - pinterest logo , 만들기버튼 , 유저프로필 이미지 클릭시 해당 페이지로 이동 <br />    
 - 전체 게시물 불러오기 , 게시물 검색기능 <br />    
 
 <h3> 2️⃣ 핀게시물 상세보기 </h3>
-<img width="737" alt="image" src="https://github.com/GOSOPT-CDS-TEAM7-DeskTop/Frontend/assets/91375979/55553c46-6628-4d32-ba08-975d1bba20f7">
+<img width="750" alt="image" src="https://github.com/GOSOPT-CDS-TEAM7-DeskTop/Frontend/assets/91375979/55553c46-6628-4d32-ba08-975d1bba20f7">
 <br />
 <br />
 - 핀게시물 상세정보 가져오기 api  <br />
@@ -30,6 +30,8 @@
 - 댓글작성 및 생성 api <br />    
 
 <h3> 3️⃣ 마이페이지 </h3>
+<img width="750" alt="image" src="https://github.com/GOSOPT-CDS-TEAM7-DeskTop/Frontend/assets/91375979/9a8799e9-184a-482c-8316-cb0ad5f455f8">
+
 <br />
 <br /> 
 - Recoil 로 저장한 유저데이터 불러와서 유저프로필 출력하기 <br />    
@@ -42,7 +44,7 @@
 - 이미지 서버로 전송 <br />    
 
 
-<h2> 🐵 웨비들 역할분담 </h2>
+<h2> 🌈 웨비들 역할분담 </h2>
 
 <table align="center">
     <tr align="center">
