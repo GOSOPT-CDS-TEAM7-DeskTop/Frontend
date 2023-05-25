@@ -30,7 +30,6 @@ function PinDetail() {
   const [content, setContent] = useState("");
 
   // const { element, triggerFull } = useFullscreen();
-
   // 댓글을 받아와 post 하는 부분
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const userValue = e.target.value;
@@ -98,6 +97,7 @@ function PinDetail() {
             </button>
             <button type="button">아이디어 더 보기</button>
           </PinImgBtns>
+
           <PinImage
             src={pinDetailData.image}
             alt={pinDetailData.altTxt}
