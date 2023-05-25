@@ -76,6 +76,8 @@ const FollowNum = styled.h3`
 const ButtonSection = styled.div`
   display: flex;
   gap: 0.7rem;
+
+  margin-bottom: 0.5rem;
 `;
 
 const ShareButton = styled.button`
