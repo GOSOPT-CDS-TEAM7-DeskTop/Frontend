@@ -15,7 +15,7 @@ interface ITitle {
 }
 
 interface ISearchArticle {
-  searchArticle: (title: ITitle) => Promise<void>;
+  searchArticle?: (title: ITitle) => Promise<void>;
 }
 
 function HeaderBar({ searchArticle }: ISearchArticle) {
@@ -29,7 +29,7 @@ function HeaderBar({ searchArticle }: ISearchArticle) {
   const searchArticleFn = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       const title = inputRef.current?.value;
-      searchArticle(title as ITitle);
+      searchArticle ? searchArticle(title as ITitle) : "null";
     }
     return;
   };
