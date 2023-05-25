@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 interface IFollowBtnProps {
   children: React.ReactNode;
@@ -7,11 +7,15 @@ interface IFollowBtnProps {
   isFollowBtnClicked: boolean;
 }
 
+interface IsFollowBtnProps {
+  isFollowBtnClicked: boolean;
+}
+
 function FollowBtn(props: IFollowBtnProps) {
   const { children, isFollowBtnClicked, setIsFollowBtnClicked } = props;
 
   const toggleFollowBtn = () => {
-    setIsFollowBtnClicked((isFollowBtnClicked: any) => !isFollowBtnClicked);
+    setIsFollowBtnClicked((isFollowBtnClicked: IsFollowBtnProps) => !isFollowBtnClicked);
   };
   return (
     <>
@@ -23,7 +27,8 @@ function FollowBtn(props: IFollowBtnProps) {
 }
 
 export default FollowBtn;
-const FollowBtnWrapper = styled.button`
+
+const FollowBtnWrapper = styled.button<IsFollowBtnProps>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,14 +40,10 @@ const FollowBtnWrapper = styled.button`
   border: 0;
 
   /* 색상 */
-  ${(props: IFollowBtnProps) => {
-    const isFollowBtnClicked = props.isFollowBtnClicked;
-    return css`
-      color: ${({ theme }) => (isFollowBtnClicked ? theme.colors.pinterest_white : theme.colors.pinterest_black)};
-      background-color: ${({ theme }) =>
-        isFollowBtnClicked ? theme.colors.pinterest_black : theme.colors.pinterest_lightgray};
-    `;
-  }}
+  color: ${({ theme, isFollowBtnClicked }) =>
+    isFollowBtnClicked ? theme.colors.pinterest_white : theme.colors.pinterest_black};
+  background-color: ${({ theme, isFollowBtnClicked }) =>
+    isFollowBtnClicked ? theme.colors.pinterest_black : theme.colors.pinterest_lightgray};
 
   font-family: "Roboto";
   font-style: normal;

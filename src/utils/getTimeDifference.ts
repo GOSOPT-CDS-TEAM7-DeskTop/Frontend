@@ -1,5 +1,7 @@
 // 날짜 차이를 계산해주는 함수
-export default function getTimeDifference (createdTimeData) {
+
+/** 보미야 여기도 any 로 해뒀는데 interface 로 수정하자! */
+export default function getTimeDifference (createdTimeData : any) {
   const nowTime = new Date();
   const createdTime = createdTimeData.replace("T", " ");
   const dateCreatedTime = new Date(createdTime.toString());

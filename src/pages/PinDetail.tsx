@@ -25,17 +25,19 @@ function PinDetail() {
   const [isSaveBtnClicked, setIsSaveBtnClicked] = useState(false);
   const [responseSaveData, setResponseSaveData] = useState(-1);
   const [isFollowBtnClicked, setIsFollowBtnClicked] = useState(false);
-  const [pinDetailData, setPinDetailData] = useState([]);
+  const [pinDetailData, setPinDetailData] = useState<any>([]);
   const [pinCommentData, setPinCommentData] = useState([]);
   const [content, setContent] = useState("");
 
-  const { element, triggerFull } = useFullscreen();
+  // const { element, triggerFull } = useFullscreen();
+
   // 댓글을 받아와 post 하는 부분
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const userValue = e.target.value;
     setContent(userValue);
   };
-  const handleSubmit = (event: React.ChangeEvent<HTMLInputElement>) => {
+
+  const handleSubmit = (event: React.MouseEvent<HTMLImageElement>) => {
     event.preventDefault();
     postComment();
   };
@@ -90,21 +92,18 @@ function PinDetail() {
             <BackSpan src={backSpanImg} alt="backSpan" />
           </Link>
           <PinImgBtns>
-            <button type="button" onClick={triggerFull}>
+            <button type="button" onClick={() => window.open(`${pinDetailData.image}`, "_blank")}>
               <img src={viewImg} alt="viewImg" />
               이미지 보기
             </button>
             <button type="button">아이디어 더 보기</button>
           </PinImgBtns>
-          <div ref={element}>
-            <PinImage
-              ref={element}
-              src={pinDetailData.image}
-              alt={pinDetailData.altTxt}
-              // style={{ width: "300px" }}
-              alt="img"
-            />
-          </div>
+          <PinImage
+            src={pinDetailData.image}
+            alt={pinDetailData.altTxt}
+            // style={{ width: "300px" }}
+            alt="img"
+          />
         </PinImgSection>
 
         {/* 오른쪽 내용 부분 */}
@@ -158,7 +157,7 @@ function PinDetail() {
               <PinReplMyProfile src={myprofileImg} alt="myprofileImg" />
               <ReplInput>
                 <Input type="text" placeholder="댓글 추가" onChange={handleInputChange} />
-                <EmojiImg src={emojiImg} alt="emojiImg" type="submit" onClick={handleSubmit} />
+                <EmojiImg src={emojiImg} alt="emojiImg" onClick={handleSubmit} />
               </ReplInput>
             </PinReplInputBox>
           </PinReplContainer>

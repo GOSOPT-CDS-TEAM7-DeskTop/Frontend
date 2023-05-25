@@ -1,11 +1,15 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled  from "styled-components";
 
 interface ISaveBtnProps {
   children: React.ReactNode;
   setIsSaveBtnClicked: Function;
   isSaveBtnClicked: boolean;
   clickSaveBtn: Function;
+}
+
+interface IsSaveBtnClickedProps {
+  isSaveBtnClicked: boolean;
 }
 
 function SaveBtn(props: ISaveBtnProps) {
@@ -25,7 +29,8 @@ function SaveBtn(props: ISaveBtnProps) {
 }
 
 export default SaveBtn;
-const SaveBtnWrapper = styled.button`
+
+const SaveBtnWrapper = styled.button<IsSaveBtnClickedProps>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,14 +40,10 @@ const SaveBtnWrapper = styled.button`
 
   border-radius: 5rem;
   border: 0;
+
   /* 색상 */
-  ${(props: ISaveBtnProps) => {
-    const isSaveBtnClicked = props.isSaveBtnClicked;
-    return css`
-      background-color: ${({ theme }) =>
-        isSaveBtnClicked ? theme.colors.pinterest_black : theme.colors.pinterest_red};
-    `;
-  }}
+  background-color: ${({ theme, isSaveBtnClicked }) =>
+    isSaveBtnClicked ? theme.colors.pinterest_black : theme.colors.pinterest_red};
 
   color: ${({ theme }) => theme.colors.pinterest_white};
   font-family: "Roboto";
