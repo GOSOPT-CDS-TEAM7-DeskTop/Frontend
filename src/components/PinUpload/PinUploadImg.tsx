@@ -1,11 +1,29 @@
 import styled from "styled-components";
 import IcImageText from "../../assets/icon/icon_imageText.svg";
+import { useState } from "react";
 
 function PinUploadImg() {
-  return (
+  const [imageFile, setImageFile] = useState("");
+
+  const handlePreviewImg = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      const file = e.target.files[0];
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onloadend = () => {
+        setImageFile(reader.result as string);
+      };
+    }
+  };
+
+  return imageFile ? (
+    <PinUploadPreviewBlock>
+      <PinUploadPreviewImg src={imageFile} alt="preview" />
+    </PinUploadPreviewBlock>
+  ) : (
     <PinUploadImgWrapper>
       <PinUploadInputLabel>
-        <PinUploadInput type="file" />
+        <PinUploadInput type="file" onChange={handlePreviewImg} />
         <PinUploadInputTextBlock>
           <img src={IcImageText} alt="imageText" />
           <PinUploadInputText>드래그하거나 클릭하여 업로드</PinUploadInputText>
@@ -27,7 +45,15 @@ const PinUploadImgWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.pinterest_gray};
 `;
 const PinUploadInputLabel = styled.label``;
+const PinUploadPreviewBlock = styled(PinUploadImgWrapper)`
+  padding: 0;
+`;
+const PinUploadPreviewImg = styled.img`
+  width: 100%;
+  height: 100%;
 
+  border-radius: 0.8rem;
+`;
 const PinUploadInputTextBlock = styled.div`
   display: flex;
   flex-direction: column;
