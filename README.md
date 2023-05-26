@@ -30,7 +30,8 @@
 - 댓글작성 및 생성 api <br />    
 
 <h3> 3️⃣ 마이페이지 </h3>
-<img width="750" alt="image" src="https://github.com/GOSOPT-CDS-TEAM7-DeskTop/Frontend/assets/91375979/9a8799e9-184a-482c-8316-cb0ad5f455f8">
+<img width="750" alt="image" src="https://github.com/GOSOPT-CDS-TEAM7-DeskTop/Frontend/assets/91375979/ac415a20-fd41-4057-a439-a72d087a9813">
+
 
 <br />
 <br /> 
