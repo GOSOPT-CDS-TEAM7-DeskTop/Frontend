@@ -127,7 +127,7 @@
 <h2> 🛠 기술스택 </h2>
 
 ```
-   - 프론트 : React.js
+   - 프론트 : React.ts
    - 스타일 : styled-components 
    - 서버 통신 : axios
    - 전역상태관리 : Recoil
